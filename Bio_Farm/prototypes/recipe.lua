@@ -36,7 +36,7 @@ data:extend({
       {type="item", name="bf-seedling", amount=10},     
       {type="fluid", name="water", amount=100},
     },
-    result_count = 25,
+    result_count = 15,
     result = "raw-wood"
 	},
 	
@@ -53,7 +53,7 @@ data:extend({
 	  {type="item", name="science-pack-1", amount=10},     
       {type="fluid", name="water", amount=100},
     },
-    result_count = 50,
+    result_count = 45,
     result = "raw-wood"
 	},
 	
