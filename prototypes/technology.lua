@@ -2,6 +2,7 @@ data:extend({
   {
       type = "technology",
       name = "bf_bio_farming",
+	  icon_size = 128,
       icon = "__Bio_Farm__/graphics/Bio_Farm_Tech.png",
       effects =
       {
