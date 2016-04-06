@@ -1,3 +1,5 @@
+require ("util")
+
 data:extend({
   {
     type = "recipe-category",
@@ -6,7 +8,7 @@ data:extend({
   {
     type = "assembling-machine",
     name = "bf_bio_farm",
-    icon = "__Bio_Farm__/graphics/Bio_Farm_Icon.png",
+    icon = "__Bio_Farm__/graphics/icons/Bio_Farm_Icon.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "bf_bio_farm"},
     max_health = 250,
@@ -40,7 +42,7 @@ data:extend({
 
 	animation =
 	{
-		filename = "__Bio_Farm__/graphics/Bio_Farm_Idle.png",
+		filename = "__Bio_Farm__/graphics/entities/biofarm/Bio_Farm_Idle.png",
 		priority = "high",
 		width = 320,
 		height = 320,
@@ -53,7 +55,7 @@ data:extend({
 
 		animation =
 		{
-			filename = "__Bio_Farm__/graphics/Bio_Farm_Working.png",
+			filename = "__Bio_Farm__/graphics/entities/biofarm/Bio_Farm_Working.png",
 			priority = "high",
 			width = 320,
 			height = 320,
@@ -73,7 +75,7 @@ data:extend({
 	  emissions = -0.2,
     },	
 
-    energy_usage = "50kW",
+    energy_usage = "100kW",
     ingredient_count = 3,
 	module_slots = 0,
     open_sound = { filename = "__base__/sound/machine-open.ogg", volume = 0.85 },
@@ -86,7 +88,7 @@ data:extend({
     type = "lamp",
     name = "bf_light_for_Bio_Farm",
 	selectable_in_game = false,
-    icon = "__Bio_Farm__/graphics/Bio_Farm_Icon.png",
+    icon = "__Bio_Farm__/graphics/icons/empty.png",
 
     max_health = 0,
     collision_box = {{-0.0, -0.0}, {0.0, 0.0}},
@@ -99,7 +101,7 @@ data:extend({
     light = {intensity = 0.95, size = 35},
     picture_off =
     {
-      filename = "__Bio_Farm__/graphics/Bio_Farm_Idle.png",
+      filename = "__Bio_Farm__/graphics/entities/biofarm/Bio_Farm_Idle.png",
       priority = "low",
       width = 0,
       height = 0,
@@ -110,7 +112,7 @@ data:extend({
     },
     picture_on =
     {
-      filename = "__Bio_Farm__/graphics/Bio_Farm_Working.png",
+      filename = "__Bio_Farm__/graphics/entities/biofarm/Bio_Farm_Working.png",
       priority = "low",
       width = 0,
       height = 0,
@@ -125,7 +127,7 @@ data:extend({
   {
     type = "electric-pole",
     name = "bf_medium-electric-pole_for_Bio_Farm",
-    icon = "__Bio_Farm__/graphics/Bio_Farm_Icon.png",
+    icon = "__Bio_Farm__/graphics/icons/empty.png",
 	selectable_in_game = false,
     max_health = 1,
     resistances = {{type = "fire", percent = 100}},
@@ -135,7 +137,7 @@ data:extend({
  
     pictures =
     {
-      filename = "__Bio_Farm__/graphics/Bio_Farm_Icon.png",
+      filename = "__Bio_Farm__/graphics/icons/empty.png",
       priority = "low",
       width = 0,
       height = 0,
@@ -189,17 +191,17 @@ data:extend({
     },
     radius_visualisation_picture =
     {
-      filename = "__Bio_Farm__/graphics/Bio_Farm_Icon.png",
+      filename = "__Bio_Farm__/graphics/icons/empty.png",
       width = 0,
       height = 0,
       priority = "low"
     },
   },
   
-   {
+  {
     type = "solar-panel",
     name = "bf_solar-panel_for_Bio_Farm",
-    icon = "__Bio_Farm__/graphics/Bio_Farm_Icon.png",
+    icon = "__Bio_Farm__/graphics/icons/empty.png",
 	selectable_in_game = false,
     max_health = 1,
     resistances = {{type = "fire", percent = 100}},
@@ -211,13 +213,64 @@ data:extend({
     },
     picture =
     {
-      filename = "__Bio_Farm__/graphics/Bio_Farm_Icon.png",
+      filename = "__Bio_Farm__/graphics/icons/empty.png",
       priority = "low",
       width = 0,
       height = 0,
     },
     production = "100kW"
   },
+  
+	-- STONECRUSHER
+	{
+		type = "furnace",
+		name = "bf-stone-crusher",
+		icon = "__Bio_Farm__/graphics/icons/stone-crusher.png",
+		flags = {"placeable-neutral","player-creation"},
+		minable = {hardness = 0.2,mining_time = 0.5,result = "bf-stone-crusher"},
+		max_health = 100,
+		corpse = "big-remnants",
+		dying_explosion = "medium-explosion",
+		module_slots = 1,
+		resistances = {{type = "fire",percent = 70}},
+		working_sound = {
+							sound = {
+										filename = "__base__/sound/assembling-machine-t1-1.ogg",
+										volume = 0.7
+									},
+							apparent_volume = 1.5
+						},
+		collision_box = {{-0.9,-0.9},{0.9,0.9}},
+		selection_box = {{-1.0,-1.0},{1.0,1.0}},
+		animation = {
+							filename = "__Bio_Farm__/graphicsentities/stone-crusher/stone-crusher-off-anim.png",
+							priority = "high",
+							width = 65,
+							height = 78,
+							frame_count = 1,
+							animation_speed = 0.5,
+							shift = {0.0, -0.1}
+						},
+		working_visualisations = {
+							filename = "__Bio_Farm__/graphics/entities/stone-crusher/stone-crusher-anim.png",
+							priority = "high",
+							width = 65,
+							height = 78,
+							frame_count = 11,
+							animation_speed = 0.18 / 2.5,
+							shift = {0.0, -0.1}
+						},
+		crafting_categories = {"bf-mod-dummy"},
+		result_inventory_size = 1,
+		source_inventory_size = 1,
+		crafting_speed = 1,
+		energy_source = {
+							type = "electric",
+							usage_priority = "secondary-input",
+							emissions = 0.05 / 1.5
+						},
+		energy_usage = "50kW"
+	},
   
   })
   
