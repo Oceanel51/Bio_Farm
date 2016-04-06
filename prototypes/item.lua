@@ -52,62 +52,151 @@ data:extend({
 	enable = false,
   },
   
-    -- Stone Crusher
+
+})
+
+
+   data:extend(
+{
 	{
 		type = "item",
-		name = "bf-stone-crusher",
-		icon = "__Bio_Farm__/graphics/icons/stone-crusher.png",
-		flags = {"goes-to-quickbar"},
-		subgroup = "production-machine",
-		order = "a[stone-crusher]",
-		place_result = "bf-stone-crusher",
-		stack_size = 10
+		name = "bf-charcoal",
+		icon = "__Bio_Farm__/graphics/icons/charcoal.png",
+		flags = {"goes-to-main-inventory"},
+		fuel_value = "6MJ",
+		subgroup = "bf-raw-materials",
+		order = "b[charcoal]",
+		stack_size = 50
+	},  
+
+	{
+		type = "item",
+		name = "bf-coke-coal",
+		icon = "__Bio_Farm__/graphics/icons/coke-coal.png",
+		flags = {"goes-to-main-inventory"},
+		fuel_value = "10MJ",
+		subgroup = "bf-raw-materials",
+		order = "b[coke-coal]",
+		stack_size = 50
 	},
-  
-	-- Crushed Stone
-  	{
+
+	{
+		type = "item",
+		name = "bf-ash",
+		icon = "__Bio_Farm__/graphics/icons/ash.png",
+		flags = {"goes-to-main-inventory"},
+		subgroup = "bf-raw-materials",
+		order = "b[ash]",
+		stack_size = 200
+	},
+
+	{
 		type = "item",
 		name = "bf-crushed-stone",
 		icon = "__Bio_Farm__/graphics/icons/crushed-stone.png",
 		flags = {"goes-to-main-inventory"},
-		subgroup = "raw-material",
+		subgroup = "bf-raw-materials",
 		order = "b[crushed-stone]",
 		stack_size = 100
 	},
 
-		--- Phosphate
 	{
 		type = "item",
 		name = "bf-phosphate",
 		icon = "__Bio_Farm__/graphics/icons/phosphate.png",
 		flags = {"goes-to-main-inventory"},
-		subgroup = "raw-material",
+		subgroup = "bf-intermediate",
 		order = "b[phosphate]",
 		stack_size = 100
 	},
 
-	--- Potassium
 	{
 		type = "item",
 		name = "bf-potassium",
 		icon = "__Bio_Farm__/graphics/icons/potassium.png",
 		flags = {"goes-to-main-inventory"},
-		subgroup = "raw-material",
+		subgroup = "bf-intermediate",
 		order = "b[potassium]",
 		stack_size = 100
 	},
 
-	
-	--- Fertilizer
 	{
 		type = "item",
 		name = "bf-fertilizer",
 		icon = "__Bio_Farm__/graphics/icons/fertilizer_32.png",
 		flags = {"goes-to-main-inventory"},
-		subgroup = "raw-material",
+		subgroup = "bf-tools",
 		order = "b[fertilizer]",
 		stack_size = 100
 	},
-  
-  
-})
+
+	{
+		type = "item",
+		name = "bf-liquid-nitrogen-barrel",
+		icon = "__Bio_Farm__/graphics/icons/liquid-nitrogen-barrel.png",
+		flags = {"goes-to-main-inventory"},
+		subgroup = "bf-intermediate",
+		order = "b[liquid-nitrogen-barrel]",
+		stack_size = 10
+	},
+
+	{
+		type = "item",
+		name = "bf-cellulose",
+		icon = "__Bio_Farm__/graphics/icons/cellulose.png",
+		flags = {"goes-to-main-inventory"},
+		subgroup = "bf-intermediate",
+		order = "b[cellulose]",
+		stack_size = 200
+	},
+
+
+
+	{
+		type = "item",
+		name = "bf-cokery",
+		icon = "__Bio_Farm__/graphics/icons/cokery.png",
+		flags = {"goes-to-quickbar"},
+		subgroup = "bf-buildings",
+		order = "a[cokery]",
+		place_result = "bf-cokery-dummy",
+		stack_size = 10
+	},
+
+	{
+		type = "item",
+		name = "bf-stone-crusher",
+		icon = "__Bio_Farm__/graphics/icons/stone-crusher.png",
+		flags = {"goes-to-quickbar"},
+		subgroup = "bf-buildings",
+		order = "a[stone-crusher]",
+		place_result = "bf-stone-crusher",
+		stack_size = 10
+	},
+
+	{
+		type = "item",
+		name = "bf-bioreactor",
+		icon = "__Bio_Farm__/graphics/icons/bioreactor.png",
+		flags = {"goes-to-quickbar"},
+		subgroup = "bf-buildings",
+		order = "a[bioreactor]",
+		place_result = "bf-bioreactor",
+		stack_size = 10
+	},
+
+	{
+		type = "item",
+		name = "bf-biolab",
+		icon = "__Bio_Farm__/graphics/icons/biolab.png",
+		flags = {"goes-to-quickbar"},
+		subgroup = "bf-buildings",
+		order = "a[biolab]",
+		place_result = "bf-biolab",
+		stack_size = 10
+	},
+
+
+	
+}
+)
