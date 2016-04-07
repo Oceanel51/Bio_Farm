@@ -15,14 +15,7 @@ data:extend({
             type = "unlock-recipe",
             recipe = "bf-Logs_Mk1"
         },
-		{
-            type = "unlock-recipe",
-            recipe = "bf-Logs_Mk2"
-        },
-		{
-            type = "unlock-recipe",
-            recipe = "bf-Logs_Mk3"
-        },
+
         {
             type = "unlock-recipe",
             recipe = "bf_bio_farm"
@@ -179,10 +172,16 @@ data:extend(
 			{
 				type = "unlock-recipe",
 				recipe = "bf-fertilizer2"
+			},
+			{
+            type = "unlock-recipe",
+            recipe = "bf-Logs_Mk2"
 			}
+
 		},
 		prerequisites = {
-			"fluid-handling"
+			"fluid-handling",
+			"bf_bio_farming"
 		},
 		unit = {
 			count = 100,

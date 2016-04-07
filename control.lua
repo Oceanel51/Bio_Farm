@@ -13,16 +13,20 @@ function On_Built(event)
      
     --- Bio Farm has been built
 	if event.created_entity.name == "bf_bio_farm" then
-	
-    local surface = event.created_entity.surface
-    local force = event.created_entity.force
-	surface.create_entity({name = "bf_medium-electric-pole_for_Bio_Farm", position = event.created_entity.position, force = force})
-	surface.create_entity({name = "bf_light_for_Bio_Farm", position = event.created_entity.position, force = force})
-	surface.create_entity({name = "bf_solar-panel_for_Bio_Farm", position = event.created_entity.position, force = force})
-	
-	
+		local surface = event.created_entity.surface
+		local force = event.created_entity.force
+		surface.create_entity({name = "bf_medium-electric-pole_for_Bio_Farm", position = event.created_entity.position, force = force})
+		surface.create_entity({name = "bf_light_for_Bio_Farm", position = event.created_entity.position, force = force})
+		surface.create_entity({name = "bf_solar-panel_for_Bio_Farm", position = event.created_entity.position, force = force})
 	end
 	
+	
+	if event.created_entity.name == "bf-cokery-dummy" then
+		local surface = event.created_entity.surface
+		local force = event.created_entity.force
+		surface.create_entity({name = "bf-cokery", position = event.created_entity.position, force = force})
+		event.created_entity.destroy()
+	end
 end
  
 ---------------------------------------------

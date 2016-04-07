@@ -50,14 +50,14 @@ data:extend({
 	ingredients =
     {
       {type="item", name="bf-seedling", amount=10},     
-	  {type="item", name="science-pack-1", amount=10},     
+	  {type="item", name="bf-fertilizer", amount=10},     
       {type="fluid", name="water", amount=100},
     },
     result_count = 45,
     result = "raw-wood"
 	},
 	
-		
+		--[[
 		--- Raw Wood from Water & Science-Pack-2
 	{
     type = "recipe",
@@ -74,7 +74,7 @@ data:extend({
     result_count = 100,
     result = "raw-wood"
 	},
-	
+	]]
 })
 
 data:extend(
@@ -100,7 +100,7 @@ data:extend(
 		type = "recipe",
 		name = "bf-charcoal",
 		icon = "__Bio_Farm__/graphics/icons/charcoal.png",
-		subgroup = "bf-raw-materials",
+		subgroup = "raw-material",
 		order = "b[charcoal]",
 		category = "biofarm-mod-smelting",
 		energy_required = 36,
@@ -114,7 +114,7 @@ data:extend(
 		type = "recipe",
 		name = "bf-coal",
 		category = "biofarm-mod-smelting",
-		subgroup = "bf-raw-materials",
+		subgroup = "raw-material",
 		energy_required = 18,
 		ingredients = {{"bf-charcoal",10}},
 		result = "coal",
@@ -126,7 +126,7 @@ data:extend(
 		type = "recipe",
 		name = "bf-coal-2",
 		category = "biofarm-mod-smelting",
-		subgroup = "bf-raw-materials",
+		subgroup = "raw-material",
 		energy_required = 18,
 		ingredients = {{"bf-charcoal",10}},
 		result = "coal",
@@ -171,7 +171,7 @@ data:extend(
 		type = "recipe",
 		name = "bf-liquid-air",
 		category = "biofarm-mod-biolab",
-		subgroup = "bf-liquids",
+		subgroup = "intermediate-product",
 		energy_required = 10,
 		ingredients = {},
 		results=
@@ -185,7 +185,7 @@ data:extend(
 		type = "recipe",
 		name = "bf-liquid-nitrogen",
 		category = "biofarm-mod-biolab",
-		subgroup = "bf-liquids",
+		subgroup = "intermediate-product",
 		energy_required = 10,
 		ingredients ={{type="fluid", name="bf-liquid-air", amount=2}},
 		results=
@@ -199,7 +199,7 @@ data:extend(
 		type = "recipe",
 		name = "bf-liquid-co2",
 		category = "biofarm-mod-biolab",
-		subgroup = "bf-liquids",
+		subgroup = "intermediate-product",
 		energy_required = 10,
 		ingredients ={{type="fluid", name="bf-liquid-air", amount=1}},
 		results=
@@ -215,7 +215,7 @@ data:extend(
 		name = "bf-fill-liquid-nitrogen-barrel",
 		category = "crafting-with-fluid",
 		energy_required = 1,
-		subgroup = "bf-liquids",
+		subgroup = "intermediate-product",
 		order = "b[fill-liquid-nitrogen-barrel]",
 		icon = "__Bio_Farm__/graphics/icons/fill-liquid-nitrogen-barrel.png",
 		ingredients =
@@ -235,7 +235,7 @@ data:extend(
 		name = "bf-empty-liquid-nitrogen-barrel",
 		category = "crafting-with-fluid",
 		energy_required = 1,
-		subgroup = "bf-liquids",
+		subgroup = "intermediate-product",
 		order = "c[empty-liquid-nitrogen-barrel]",
 		icon = "__Bio_Farm__/graphics/icons/empty-liquid-nitrogen-barrel.png",
 		ingredients =
@@ -332,7 +332,7 @@ data:extend(
 		type = "recipe",
 		name = "bf-biomass-0",
 		icon = "__Bio_Farm__/graphics/icons/biomass.png",
-		subgroup = "bf-intermediate",
+		subgroup = "intermediate-product",
 		category = "biofarm-mod-bioreactor",
 		energy_required = 10,
 		ingredients =
@@ -352,7 +352,7 @@ data:extend(
 		type = "recipe",
 		name = "bf-biomass-1",
 		icon = "__Bio_Farm__/graphics/icons/biomass.png",
-		subgroup = "bf-intermediate",
+		subgroup = "intermediate-product",
 		category = "biofarm-mod-bioreactor",
 		energy_required = 10,
 		ingredients =
@@ -389,7 +389,7 @@ data:extend(
 		type = "recipe",
 		name = "bf-platic",
 		category = "biofarm-mod-biolab",
-		subgroup = "bf-intermediate",
+		subgroup = "intermediate-product",
 		energy_required = 1,
 		ingredients =
 		{
