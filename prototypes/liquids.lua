@@ -44,20 +44,6 @@
 
 	{
 		type = "fluid",
-		name = "bf-methanol",
-		default_temperature = 0,
-		heat_capacity = "1KJ",
-		base_color = {r=0, g=0, b=0},
-		flow_color = {r=0.0, g=0.8, b=0.1},
-		max_temperature = 15,
-		icon = "__Bio_Farm__/graphics/icons/methanol.png",
-		pressure_to_speed_ratio = 0.4,
-		flow_to_energy_ratio = 0.59,
-		order = "a[fluid]-b[methanol]"
-	},
-
-	{
-		type = "fluid",
 		name = "bf-biomass",
 		default_temperature = 25,
 		heat_capacity = "1KJ",

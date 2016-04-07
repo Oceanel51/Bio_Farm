@@ -43,11 +43,16 @@ data:extend(
 	{
 		type = "technology",
 		name = "bf-coal-processing",
-		icon = "__Bio_Farm__/graphics/icons/charcoal.png",
+		icon_size = 128,
+		icon = "__Bio_Farm__/graphics/technology/Coal_128.png",
 		effects = {
 			{
 				type = "unlock-recipe",
 				recipe = "bf-charcoal"
+			},
+			{
+				type = "unlock-recipe",
+				recipe = "bf-charcoal-2"
 			},
 			{
 				type = "unlock-recipe",
@@ -56,6 +61,10 @@ data:extend(
 			{
 				type = "unlock-recipe",
 				recipe = "bf-ash"
+			},
+			{
+				type = "unlock-recipe",
+				recipe = "bf-ash-2"
 			},
 			{
 				type = "unlock-recipe",
@@ -74,12 +83,11 @@ data:extend(
 		}
 	},
 
-
-
 	{
 		type = "technology",
 		name = "bf-coal-processing-2",
-		icon = "__Bio_Farm__/graphics/icons/charcoal_p.png",
+		icon_size = 128,
+		icon = "__Bio_Farm__/graphics/technology/Coal_128.png",
 		effects = {
 			{
 				type = "unlock-recipe",
@@ -102,7 +110,8 @@ data:extend(
 	{
 		type = "technology",
 		name = "bf-coal-processing-3",
-		icon = "__Bio_Farm__/graphics/icons/charcoal_pp.png",
+		icon_size = 128,
+		icon = "__Bio_Farm__/graphics/technology/Coal_128.png",
 		effects = {
 			{
 				type = "unlock-recipe",
@@ -184,9 +193,9 @@ data:extend(
 			"bf_bio_farming"
 		},
 		unit = {
-			count = 100,
+			count = 200,
 			ingredients = {
-				{"science-pack-1", 1},
+				{"science-pack-1", 2},
 				{"science-pack-2", 1}
 			},
 			time = 30
@@ -196,7 +205,8 @@ data:extend(
 	{
 		type = "technology",
 		name = "bf-advanced-biotechnology",
-		icon = "__Bio_Farm__/graphics/icons/biomass.png",
+		icon_size = 128,
+		icon = "__Bio_Farm__/graphics/technology/Biomass_128.png",
 		effects = {
 			{
 				type = "unlock-recipe",
@@ -224,9 +234,9 @@ data:extend(
 			"bf-fertilizer"
 		},
 		unit = {
-			count = 100,
+			count = 150,
 			ingredients = {
-				{"science-pack-1", 2},
+				{"science-pack-1", 4},
 				{"science-pack-2", 2}
 			},
 			time = 30
@@ -236,7 +246,8 @@ data:extend(
 	{
 		type = "technology",
 		name = "bf-organic-plastic",
-		icon = "__Bio_Farm__/graphics/icons/cellulose.png",
+		icon_size = 128,
+		icon = "__Bio_Farm__/graphics/technology/Cellulose_128.png",
 		effects = {
 			{
 				type = "unlock-recipe",
@@ -247,7 +258,7 @@ data:extend(
 			"bf-advanced-biotechnology"
 		},
 		unit = {
-			count = 50,
+			count = 150,
 			ingredients = {
 				{"science-pack-1", 2},
 				{"science-pack-2", 2},

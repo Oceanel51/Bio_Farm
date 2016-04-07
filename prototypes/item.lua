@@ -52,7 +52,19 @@ data:extend({
 	enable = false,
   },
   
+	{
+		type = "item",
+		name = "bf-woodpulp",
+		icon = "__Bio_Farm__/graphics/icons/Woodpulp_32.png",
+		flags = {"goes-to-main-inventory"},
+		fuel_value = "2MJ",
+		subgroup = "raw-material",
+		order = "b[woodpulp]",
+		stack_size = 100
+	},  
 
+  
+  
 })
 
 
@@ -74,7 +86,7 @@ data:extend({
 		name = "bf-coke-coal",
 		icon = "__Bio_Farm__/graphics/icons/coke-coal.png",
 		flags = {"goes-to-main-inventory"},
-		fuel_value = "10MJ",
+		fuel_value = "18MJ",
 		subgroup = "raw-material",
 		order = "b[coke-coal]",
 		stack_size = 50
@@ -127,9 +139,19 @@ data:extend({
 		flags = {"goes-to-main-inventory"},
 		subgroup = "intermediate-product",
 		order = "b[fertilizer]",
-		stack_size = 100
+		stack_size = 200
+	},
+	{
+		type = "item",
+		name = "bf-adv-fertilizer",
+		icon = "__Bio_Farm__/graphics/icons/advanced_fertilizer_32.png",
+		flags = {"goes-to-main-inventory"},
+		subgroup = "intermediate-product",
+		order = "c[fertilizer]",
+		stack_size = 200
 	},
 
+	
 	{
 		type = "item",
 		name = "bf-liquid-nitrogen-barrel",

@@ -6,7 +6,12 @@ data:extend({
     enabled = "false",
     energy_required = 0.5,
     ingredients = {{"raw-wood",1}},
-    result = "bf-seedling"
+	results=
+    {
+      {type="item", name="bf-seedling", amount=2},
+      {type="item", name="bf-woodpulp", amount=1}
+    }
+	
 	},
 	
 	--- Bio Farm
@@ -40,47 +45,70 @@ data:extend({
     result = "raw-wood"
 	},
 	
-		--- Raw Wood from Water & Science-Pack-1
+		--- Raw Wood from Water & Fertilizer
 	{
     type = "recipe",
     name = "bf-Logs_Mk2",
-    category = "biofarm-mod-dummy",
-    enabled = "false",
-    energy_required = 220,
-	ingredients =
-    {
-      {type="item", name="bf-seedling", amount=10},     
-	  {type="item", name="bf-fertilizer", amount=10},     
-      {type="fluid", name="water", amount=100},
-    },
-    result_count = 45,
-    result = "raw-wood"
-	},
-	
-		--[[
-		--- Raw Wood from Water & Science-Pack-2
-	{
-    type = "recipe",
-    name = "bf-Logs_Mk3",
     category = "biofarm-mod-dummy",
     enabled = "false",
     energy_required = 200,
 	ingredients =
     {
       {type="item", name="bf-seedling", amount=10},     
-	  {type="item", name="science-pack-2", amount=5},     
+	  {type="item", name="bf-fertilizer", amount=10},     
+      {type="fluid", name="water", amount=100},
+    },
+    result_count = 50,
+    result = "raw-wood"
+	},
+	
+		
+		--- Raw Wood from Fertilizer & NE_enhanced-nutrient-solution (Natural Evolution Mod)
+	{
+    type = "recipe",
+    name = "bf-Logs_Mk3",
+    category = "biofarm-mod-dummy",
+    enabled = "false",
+    energy_required = 180,
+	ingredients =
+    {
+      {type="item", name="bf-seedling", amount=10},     
+	  --{type="item", name="bf-adv-fertilizer", amount=5},     
       {type="fluid", name="water", amount=100},
     },
     result_count = 100,
     result = "raw-wood"
 	},
-	]]
+	
+	
+		-- Advanced FERTILIZER --
+	{
+		type = "recipe",
+		name = "bf-adv-fertilizer",
+		category = "chemistry",
+		energy_required = 125,
+		icon = "__Bio_Farm__/graphics/icons/advanced_fertilizer_32.png",
+		ingredients =
+		{
+			{type="item", name="bf-fertilizer", amount=25},
+			{type="item", name="bf-woodpulp", amount=50},
+			--{type="item", name="small-alien-artifact", amount=50},
+			{type="fluid", name="NE_enhanced-nutrient-solution", amount=5},
+		},
+		results=
+		{
+			{type="item", name="bf-adv-fertilizer", amount=50}
+		},
+		enabled = "false"
+	},
+	
 })
 
 data:extend(
 {
 
 	-- RECIPE-DUMMY FOR FIELD TO USE FERTILIZER
+--[[
 	{
 		type = "recipe",
 		name = "fertwork",
@@ -95,10 +123,25 @@ data:extend(
 		result_count = 10,
 		enabled = "true"
 	},
-	-- CHARCOAL
+	]]
+	-- CHARCOAL 1
 	{
 		type = "recipe",
 		name = "bf-charcoal",
+		icon = "__Bio_Farm__/graphics/icons/charcoal.png",
+		subgroup = "raw-material",
+		order = "b[charcoal]",
+		category = "biofarm-mod-smelting",
+		energy_required = 36,
+		ingredients = {{"bf-woodpulp",40}},
+		result = "bf-charcoal",
+		result_count = 18,
+		enabled = "false"
+	},
+		-- CHARCOAL 2
+	{
+		type = "recipe",
+		name = "bf-charcoal-2",
 		icon = "__Bio_Farm__/graphics/icons/charcoal.png",
 		subgroup = "raw-material",
 		order = "b[charcoal]",
@@ -109,6 +152,7 @@ data:extend(
 		result_count = 18,
 		enabled = "false"
 	},
+	
 	-- COAL --
 	{
 		type = "recipe",
@@ -155,6 +199,17 @@ data:extend(
 		result_count = 5,
 		enabled = "false"
 	},   
+		-- ASH 2--
+	{
+		type = "recipe",
+		name = "bf-ash-2",
+		category = "biofarm-mod-smelting",
+		energy_required = 5,
+		ingredients = {{"bf-woodpulp",10}},
+		result = "bf-ash",
+		result_count = 5,
+		enabled = "false"
+	},  
 	-- CRUSHED STONE
 	{
 		type = "recipe",
