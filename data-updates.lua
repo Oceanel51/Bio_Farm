@@ -30,6 +30,6 @@ if NEConfig.mod.NEBuildings then
 	add_technology_recipe ("bf-advanced-biotechnology", "bf-Logs_Mk3")
 	add_technology_recipe ("bf-advanced-biotechnology", "bf-adv-fertilizer")
 	table.insert(data.raw.recipe["bf-Logs_Mk3"].ingredients,{type="item", name="bf-adv-fertilizer", amount=5})
-	table.insert(data.raw.recipe["bf-adv-fertilizer"].ingredients,{type="item", name="small-alien-artifact", amount=50})
+	table.insert(data.raw.recipe["bf-adv-fertilizer"].ingredients,{type="fluid", name="NE_enhanced-nutrient-solution", amount=50})
 
 end

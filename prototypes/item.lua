@@ -5,7 +5,7 @@ data:extend({
     name = "bf-seedling",
     icon = "__Bio_Farm__/graphics/icons/Seedling.png",
     flags = { "goes-to-quickbar" },
-    subgroup = "raw-material",
+	subgroup = "raw-material",
     stack_size= 50,
   },
   {

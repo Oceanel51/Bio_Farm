@@ -4,13 +4,15 @@ data:extend({
     type = "recipe",
     name = "bf-seedling",
     enabled = "false",
+	subgroup = "raw-material",
     energy_required = 0.5,
+	icon = "__Bio_Farm__/graphics/icons/Seedling.png",
     ingredients = {{"raw-wood",1}},
 	results=
     {
       {type="item", name="bf-seedling", amount=2},
       {type="item", name="bf-woodpulp", amount=1}
-    }
+    },
 	
 	},
 	
@@ -35,13 +37,13 @@ data:extend({
     name = "bf-Logs_Mk1",
     category = "biofarm-mod-dummy",
     enabled = "false",
-    energy_required = 240,
+    energy_required = 400,
 	ingredients =
     {
-      {type="item", name="bf-seedling", amount=10},     
+      {type="item", name="bf-seedling", amount=20},     
       {type="fluid", name="water", amount=100},
     },
-    result_count = 15,
+    result_count = 40,
     result = "raw-wood"
 	},
 	
@@ -51,14 +53,14 @@ data:extend({
     name = "bf-Logs_Mk2",
     category = "biofarm-mod-dummy",
     enabled = "false",
-    energy_required = 200,
+    energy_required = 300,
 	ingredients =
     {
-      {type="item", name="bf-seedling", amount=10},     
+      {type="item", name="bf-seedling", amount=30},     
 	  {type="item", name="bf-fertilizer", amount=10},     
       {type="fluid", name="water", amount=100},
     },
-    result_count = 50,
+    result_count = 60,
     result = "raw-wood"
 	},
 	
@@ -69,12 +71,12 @@ data:extend({
     name = "bf-Logs_Mk3",
     category = "biofarm-mod-dummy",
     enabled = "false",
-    energy_required = 180,
+    energy_required = 200,
 	ingredients =
     {
-      {type="item", name="bf-seedling", amount=10},     
-	  --{type="item", name="bf-adv-fertilizer", amount=5},     
+      {type="item", name="bf-seedling", amount=50},     
       {type="fluid", name="water", amount=100},
+	  --{type="item", name="bf-adv-fertilizer", amount=5},     -- Will be added if you have Natural Evolution Buildings Mod installed.
     },
     result_count = 100,
     result = "raw-wood"
@@ -92,8 +94,7 @@ data:extend({
 		{
 			{type="item", name="bf-fertilizer", amount=25},
 			{type="item", name="bf-woodpulp", amount=50},
-			--{type="item", name="small-alien-artifact", amount=50},
-			{type="fluid", name="NE_enhanced-nutrient-solution", amount=5},
+			--{type="fluid", name="NE_enhanced-nutrient-solution", amount=5}, -- Will be added if you have Natural Evolution Buildings Mod installed.
 		},
 		results=
 		{
