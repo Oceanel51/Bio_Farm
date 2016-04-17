@@ -87,9 +87,9 @@ data:extend({
     type = "lamp",
     name = "bf_light_for_Bio_Farm",
 	selectable_in_game = false,
-    icon = "__Bio_Farm__/graphics/icons/empty.png",
+    icon = "__Bio_Farm__/graphics/icons/Bio_Farm_Lamp.png",
 
-    max_health = 0,
+    max_health = 1,
     collision_box = {{-0.0, -0.0}, {0.0, 0.0}},
 	energy_source =
     {
@@ -97,7 +97,7 @@ data:extend({
       usage_priority = "secondary-input"
     },
     energy_usage_per_tick = "100kW",
-    light = {intensity = 0.95, size = 35},
+    light = {intensity = 1, size = 40},
     picture_off =
     {
       filename = "__Bio_Farm__/graphics/entities/biofarm/Bio_Farm_Idle.png",
@@ -132,7 +132,7 @@ data:extend({
     resistances = {{type = "fire", percent = 100}},
     collision_box = {{-0, -0}, {0, 0}},
     maximum_wire_distance = 10,
-    supply_area_distance = 4.5,
+    supply_area_distance = 5,
  
     pictures =
     {
@@ -200,7 +200,7 @@ data:extend({
   {
     type = "solar-panel",
     name = "bf_solar-panel_for_Bio_Farm",
-    icon = "__Bio_Farm__/graphics/icons/empty.png",
+    icon = "__Bio_Farm__/graphics/icons/Bio_Farm_Solar.png",
 	selectable_in_game = false,
     max_health = 1,
     resistances = {{type = "fire", percent = 100}},
