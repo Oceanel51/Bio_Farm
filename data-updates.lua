@@ -1,9 +1,6 @@
 
 NEConfig = {}
-
-
-require "scripts.detectmod" --Detect supported Mods, currently DyTechWar and Bob's Enemies and others
-
+require "libs.detectmod" --Detect sif NE Buildings exist
 data.raw.item["raw-wood"].stack_size = 200
 
 

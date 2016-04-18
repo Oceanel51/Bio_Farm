@@ -14,11 +14,16 @@ for index, force in pairs(game.forces) do
     recipes["bf-seedling"].reload()
     recipes["bf-Logs_Mk1"].enabled = true
     recipes["bf-Logs_Mk1"].reload()
-	recipes["bf-Logs_Mk2"].enabled = true
-    recipes["bf-Logs_Mk2"].reload()
-	recipes["bf-Logs_Mk3"].enabled = true
-    recipes["bf-Logs_Mk3"].reload()
     recipes["bf_bio_farm"].enabled = true
     recipes["bf_bio_farm"].reload()
 	end
+	
+	
+	
+  if technologies["bf-fertilizer"].researched then
+    recipes["bf-Logs_Mk2"].enabled = true
+    recipes["bf-Logs_Mk2"].reload()
+	end
+	
+	
 end
