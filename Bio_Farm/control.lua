@@ -12,12 +12,21 @@ script.on_event({defines.events.on_entity_died,defines.events.on_robot_pre_mined
 function On_Built(event)
      
     --- Bio Farm has been built
+	--local entity = event.created_entity
 	if event.created_entity.name == "bf_bio_farm" then
 		local surface = event.created_entity.surface
 		local force = event.created_entity.force
-		surface.create_entity({name = "bf_medium-electric-pole_for_Bio_Farm", position = event.created_entity.position, force = force})
-		surface.create_entity({name = "bf_light_for_Bio_Farm", position = event.created_entity.position, force = force})
-		surface.create_entity({name = "bf_solar-panel_for_Bio_Farm", position = event.created_entity.position, force = force})
+		local position = event.created_entity.position		   
+        local pole_name = "bf_medium-electric-pole_for_Bio_Farm"  
+		local panel_name = "bf_solar-panel_for_Bio_Farm"  
+		local lamp_name = "bf_light_for_Bio_Farm"      
+		
+		surface.create_entity({name = pole_name, position = position, force = force})
+		surface.create_entity({name = panel_name, position = position, force = force})
+		surface.create_entity({name = lamp_name, position = position, force = force})
+		
+		--event.created_entity.minable = false
+		
 	end
 	
 	
@@ -35,13 +44,13 @@ function On_Remove(event)
 	--- Bio Farm has been removed
    	if event.entity.name == "bf_bio_farm" then
 		
-		res2 = game.get_surface(1).find_entities_filtered{name="bf_medium-electric-pole_for_Bio_Farm", area=GetArea(event.entity.position, 0.5)}
-		res = game.get_surface(1).find_entities_filtered{name="bf_light_for_Bio_Farm", area=GetArea(event.entity.position, 0.5)}
-		res3 = game.get_surface(1).find_entities_filtered{name="bf_solar-panel_for_Bio_Farm", area=GetArea(event.entity.position, 0.5)}
+		res1 = game.get_surface(1).find_entities_filtered{name="bf_medium-electric-pole_for_Bio_Farm", area=GetArea(event.entity.position, 0.8)}
+		res2 = game.get_surface(1).find_entities_filtered{name="bf_light_for_Bio_Farm", area=GetArea(event.entity.position, 0.8)}
+		res3 = game.get_surface(1).find_entities_filtered{name="bf_solar-panel_for_Bio_Farm", area=GetArea(event.entity.position, 0.8)}
 
-		--if #res then
+		--if #res1 then
          -- If we've found it, destroy it.
-         res[1].destroy()
+         res1[1].destroy()
 		--end
 		--if #res2 then
          -- If we've found it, destroy it.

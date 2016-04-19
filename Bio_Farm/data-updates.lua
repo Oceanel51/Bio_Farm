@@ -3,7 +3,14 @@ NEConfig = {}
 require "libs.detectmod" --Detect sif NE Buildings exist
 data.raw.item["raw-wood"].stack_size = 200
 
+--data.raw["lamp"]["bf_light_for_Bio_Farm"].minable = false
+--data.raw["lamp"]["bf_light_for_Bio_Farm"].destructible = false
 
+--data.raw["electric-pole"]["bf_medium-electric-pole_for_Bio_Farm"].minable = false
+--data.raw["electric-pole"]["bf_medium-electric-pole_for_Bio_Farm"].destructible = false
+
+--data.raw["solar-panel"]["bf_solar-panel_for_Bio_Farm"].minable = false
+--data.raw["solar-panel"]["bf_solar-panel_for_Bio_Farm"].destructible = false
 
 
 
