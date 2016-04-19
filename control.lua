@@ -39,18 +39,18 @@ function On_Remove(event)
 		res = game.get_surface(1).find_entities_filtered{name="bf_light_for_Bio_Farm", area=GetArea(event.entity.position, 0.5)}
 		res3 = game.get_surface(1).find_entities_filtered{name="bf_solar-panel_for_Bio_Farm", area=GetArea(event.entity.position, 0.5)}
 
-		if #res then
+		--if #res then
          -- If we've found it, destroy it.
          res[1].destroy()
-		end
-		if #res2 then
+		--end
+		--if #res2 then
          -- If we've found it, destroy it.
          res2[1].destroy()
-		end
-		if #res3 then
+		--end
+		--if #res3 then
          -- If we've found it, destroy it.
          res3[1].destroy()
-		end
+		--end
 	end
 
 end
