@@ -16,7 +16,8 @@ function init_bio_farm()
     script.on_event(defines.events.on_robot_built_entity, On_Built)
     script.on_event(defines.events.on_preplayer_mined_item, On_Remove)
     script.on_event(defines.events.on_robot_pre_mined, On_Remove)
-    script.on_event(defines.events.on_entity_died, On_Death)
+    script.on_event(defines.events.on_entity_died, On_Remove)
+	--script.on_event(defines.events.on_entity_died, On_Death)
 end
 
 ---------------------------------------------
@@ -32,11 +33,6 @@ function On_Built(event)
 		local pole_name = "bf_medium-electric-pole_for_Bio_Farm"  
 		local panel_name = "bf_solar-panel_for_Bio_Farm"  
 		local lamp_name = "bf_light_for_Bio_Farm"      
-			
-		--surface.create_entity({name = pole_name, position = position, force = force})
-		--surface.create_entity({name = panel_name, position = position, force = force})
-		--surface.create_entity({name = lamp_name, position = position, force = force})
-
 		  
 		local create_pole = surface.create_entity({name = pole_name, position = position, force = force})
 		local create_panel = surface.create_entity({name = panel_name, position = position, force = force})
@@ -45,9 +41,10 @@ function On_Built(event)
 		create_pole.minable = false
 		create_panel.minable = false
 		create_lamp.minable = false
+		
+		--group_entities(cantor(position.x,position.y), { b_farm, create_pole, create_panel, create_lamp })
 		  
-		group_entities(cantor(position.x,position.y), { b_farm, create_pole, create_panel, create_lamp })
-		  
+
 	end
 
 	--- Cokery Swicthout
@@ -58,7 +55,28 @@ function On_Built(event)
 		event.created_entity.destroy()
 	end
 end
- 
+
+
+---------------------------------------------
+function On_Remove(event)
+	
+	--- Bio Farm has been removed
+   	if event.entity.name == "bf_bio_farm" then
+		
+		res1 = game.get_surface(1).find_entities_filtered{name="bf_medium-electric-pole_for_Bio_Farm", area=GetArea(event.entity.position, 0.8)}
+		res2 = game.get_surface(1).find_entities_filtered{name="bf_light_for_Bio_Farm", area=GetArea(event.entity.position, 0.8)}
+		res3 = game.get_surface(1).find_entities_filtered{name="bf_solar-panel_for_Bio_Farm", area=GetArea(event.entity.position, 0.8)}
+
+
+         res1[1].destroy()
+         res2[1].destroy()
+         res3[1].destroy()
+
+	end
+
+end
+
+--[[ 
 ---------------------------------------------
 function On_Remove(event)
 	
@@ -76,7 +94,7 @@ function On_Remove(event)
                 end
             end
         end
-        ungroup_entities(pos_hash)
+        --ungroup_entities(pos_hash)
 	end
 
 end
@@ -98,8 +116,14 @@ function On_Death(event)
                 end
             end
         end
-        ungroup_entities(pos_hash)
+        --ungroup_entities(pos_hash)
 	end
 
 end
 
+]]
+
+function GetArea(pos, radius)
+   -- This calculates a box of the given radius around the given position.
+   return {{x = pos.x - radius, y = pos.y - radius}, {x = pos.x + radius, y = pos.y + radius}}
+end
