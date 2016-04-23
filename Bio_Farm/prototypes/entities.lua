@@ -80,7 +80,11 @@ data:extend({
     open_sound = { filename = "__base__/sound/machine-open.ogg", volume = 0.85 },
     close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.75 },
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
-
+	module_specification =
+    {
+      module_slots = 3
+    },
+    allowed_effects = {"consumption", "speed"}
   },
   
   {
@@ -89,7 +93,6 @@ data:extend({
     icon = "__Bio_Farm__/graphics/icons/Bio_Farm_Lamp.png",
 	flags = {"placeable-neutral", "player-creation", "placeable-off-grid", "not-repairable"},
 	selectable_in_game = false,
-	--minable = false,
 	destructible = false,
     max_health = 1,
     collision_box = {{-0.0, -0.0}, {0.0, 0.0}},
@@ -131,7 +134,6 @@ data:extend({
     icon = "__Bio_Farm__/graphics/icons/empty.png",
 	flags = {"placeable-neutral", "player-creation", "placeable-off-grid", "not-repairable"},
 	selectable_in_game = false,
-	--minable = false,
 	destructible = false,
     max_health = 1,
     resistances = {{type = "fire", percent = 100}},
@@ -208,7 +210,6 @@ data:extend({
     icon = "__Bio_Farm__/graphics/icons/Bio_Farm_Solar.png",
 	flags = {"placeable-neutral", "player-creation", "placeable-off-grid", "not-repairable"},
 	selectable_in_game = false,
-	--minable = false,
 	destructible = false,
     max_health = 1,
     resistances = {{type = "fire", percent = 100}},

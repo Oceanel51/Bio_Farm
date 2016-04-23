@@ -161,7 +161,7 @@ data:extend(
 		category = "biofarm-mod-smelting",
 		subgroup = "raw-material",
 		energy_required = 18,
-		ingredients = {{"bf-charcoal",10}},
+		ingredients = {{"bf-charcoal",12}},
 		result = "coal",
 		result_count = 2,
 		enabled = "false"
@@ -173,7 +173,7 @@ data:extend(
 		category = "biofarm-mod-smelting",
 		subgroup = "raw-material",
 		energy_required = 18,
-		ingredients = {{"bf-charcoal",10}},
+		ingredients = {{"bf-charcoal",12}},
 		result = "coal",
 		result_count = 4,
 		enabled = "false"
@@ -184,7 +184,7 @@ data:extend(
 		name = "bf-coke-coal",
 		category = "biofarm-mod-smelting",
 		energy_required = 25,
-		ingredients = {{"coal",10}},
+		ingredients = {{"coal",15}},
 		result = "bf-coke-coal",
 		result_count = 10,
 		enabled = "false"
