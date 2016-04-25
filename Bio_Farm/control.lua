@@ -16,8 +16,8 @@ function init_bio_farm()
     script.on_event(defines.events.on_robot_built_entity, On_Built)
     script.on_event(defines.events.on_preplayer_mined_item, On_Remove)
     script.on_event(defines.events.on_robot_pre_mined, On_Remove)
-    script.on_event(defines.events.on_entity_died, On_Remove)
-	--script.on_event(defines.events.on_entity_died, On_Death)
+    --script.on_event(defines.events.on_entity_died, On_Remove)
+	script.on_event(defines.events.on_entity_died, On_Death)
 end
 
 ---------------------------------------------
@@ -39,25 +39,20 @@ function On_Built(event)
 		local create_lamp = surface.create_entity({name = lamp_name, position = position, force = force})
 		  
 		create_pole.minable = false
+		create_pole.destructible = false
 		create_panel.minable = false
+		create_panel.destructible = false
 		create_lamp.minable = false
+		create_lamp.destructible = false
 		
-		--group_entities(cantor(position.x,position.y), { b_farm, create_pole, create_panel, create_lamp })
+		group_entities(cantor(position.x,position.y), { b_farm, create_pole, create_panel, create_lamp })
 		  
 
 	end
---[[
-	--- Cokery Swicthout
-	if event.created_entity.name == "bf-cokery-dummy" then
-		local surface = event.created_entity.surface
-		local force = event.created_entity.force
-		surface.create_entity({name = "bf-cokery", position = event.created_entity.position, force = force})
-		event.created_entity.destroy()
-	end
-	]]
+
 end
 
-
+--[[
 ---------------------------------------------
 function On_Remove(event)
 	
@@ -76,8 +71,8 @@ function On_Remove(event)
 	end
 
 end
+]]
 
---[[ 
 ---------------------------------------------
 function On_Remove(event)
 	
@@ -95,7 +90,7 @@ function On_Remove(event)
                 end
             end
         end
-        --ungroup_entities(pos_hash)
+        ungroup_entities(pos_hash)
 	end
 
 end
@@ -111,20 +106,38 @@ function On_Death(event)
         if entity_group then
             for ix, vx in ipairs(entity_group) do
                 if vx == entity then
-                    vx.destroy()
+                    --vx.destroy()
                 else
-                    vx.die()
+                    --vx.die()
+					vx.destroy()
                 end
             end
         end
-        --ungroup_entities(pos_hash)
+        ungroup_entities(pos_hash)
 	end
 
 end
 
-]]
 
-function GetArea(pos, radius)
-   -- This calculates a box of the given radius around the given position.
-   return {{x = pos.x - radius, y = pos.y - radius}, {x = pos.x + radius, y = pos.y + radius}}
+
+
+--- Utils
+function group_entities(entity_list)
+    return group_entities(nil, entity_list)
+end
+
+function group_entities(entity_groupid, entity_list)
+    return group("entities", entity_groupid, entity_list)
+end
+
+function getGroup_entities(entity_groupid)
+    return getGroup("entities", entity_groupid)
+end
+
+function getGroup_entities_by_member(entity_id)
+    return getGroup_byMember("entities", entity_id)
+end
+
+function ungroup_entities(entity_groupid)
+    return ungroup("entities", entity_groupid)
 end

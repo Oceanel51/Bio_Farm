@@ -3,17 +3,16 @@ NEConfig = {}
 require "libs.detectmod" --Detect sif NE Buildings exist
 data.raw.item["raw-wood"].stack_size = 200
 
---data.raw["lamp"]["bf_light_for_Bio_Farm"].minable = false
---data.raw["lamp"]["bf_light_for_Bio_Farm"].destructible = false
-
---data.raw["electric-pole"]["bf_medium-electric-pole_for_Bio_Farm"].minable = false
---data.raw["electric-pole"]["bf_medium-electric-pole_for_Bio_Farm"].destructible = false
-
---data.raw["solar-panel"]["bf_solar-panel_for_Bio_Farm"].minable = false
---data.raw["solar-panel"]["bf_solar-panel_for_Bio_Farm"].destructible = false
-
+--- Got tierd of reaching limits...
+if data.raw.player.player.build_distance < 220 then
+	data.raw.player.player.build_distance = 220
+	data.raw.player.player.reach_distance = 200
+	data.raw.player.player.reach_resource_distance = 200
+	data.raw.player.player.drop_item_distance = 200	
+end 
 
 
+------- Adds a Mk3 recipe for wood if you're playing with Natural Evolution Buildings
 if NEConfig.mod.NEBuildings then
 
 

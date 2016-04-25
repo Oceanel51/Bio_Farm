@@ -421,7 +421,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "Bio_Garden",
-		icon = "__Bio_Farm__/graphics/entities/biogarden/bio_garden.png",
+		icon = "__Bio_Farm__/graphics/icons/bio_garden_icon.png",
 		energy_required = 10.0,
 		enabled = "false",
 		ingredients =
