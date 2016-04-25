@@ -36,7 +36,7 @@ data:extend({
 	  
     },
 
-	collision_box = {{-4.3, -4.3}, {4.3, 4.3}},
+	collision_box = {{-4.2, -4.2}, {4.2, 4.2}},
     selection_box = {{-4.5, -4.5}, {4.5, 4.5}},
 
 	animation =
@@ -76,7 +76,6 @@ data:extend({
 
     energy_usage = "100kW",
     ingredient_count = 3,
-	module_slots = 0,
     open_sound = { filename = "__base__/sound/machine-open.ogg", volume = 0.85 },
     close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.75 },
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
@@ -238,28 +237,6 @@ data:extend(
  
 	-- COKERY
 	{
-    type = "container",
-    name = "bf-cokery-dummy",
-    icon = "__Bio_Farm__/graphics/icons/cokery.png",
-    flags = {"placeable-neutral","placeable-player", "player-creation"},
-    minable = {hardness = 0.2, mining_time = 0.5, result = "bf-cokery"},
-		max_health = 200,
-		corpse = "big-remnants",
-		resistances = {{type = "fire", percent = 70}},
-		collision_box = {{-1.4, -2.0}, {1.4, 2.4}},
-		selection_box = {{-1.5, -2.5}, {1.5, 2.5}},
-    inventory_size = 1,
-    picture =
-    {
-      filename = "__Bio_Farm__/graphics/entities/cokery/cokery-idle.png",
-      priority = "extra-high",
-      width = 100,
-      height = 160,
-      shift = {0.0, 0.0}
-    }
-  },
-
-	{
 		type = "assembling-machine",
 		name = "bf-cokery",
 		icon = "__Bio_Farm__/graphics/icons/cokery.png",
@@ -271,9 +248,13 @@ data:extend(
 		resistances = {{type = "fire", percent = 70}},
 		collision_box = {{-1.4, -2.0}, {1.4, 2.4}},
 		selection_box = {{-1.5, -2.5}, {1.5, 2.5}},
-		module_slots = 2,
+		--module_slots = 2,
+		--allowed_effects = {"consumption", "speed"},
+		module_specification =
+		{
+			module_slots = 2
+		},
 		allowed_effects = {"consumption", "speed"},
-
 		animation =
 		{
 			north =
@@ -346,6 +327,7 @@ data:extend(
 		energy_usage = "6W",
 		crafting_speed = 2,
 		ingredient_count = 1
+		
 	},
 	-- STONECRUSHER
 	{
@@ -476,116 +458,71 @@ data:extend(
 		energy_usage = "10kW"
 	},
 
-	-- BIOLAB
-	{
-		type = "assembling-machine",
-		name = "bf-biolab",
-		icon = "__Bio_Farm__/graphics/icons/biolab.png",
-		flags = {"placeable-neutral","placeable-player", "player-creation"},
-		minable = {hardness = 0.2, mining_time = 0.5, result = "bf-biolab"},
-		max_health = 300,
-		corpse = "big-remnants",
-		collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
-		selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
-		module_slots = 2,
-		allowed_effects = {"consumption", "speed", "productivity", "pollution"},
-		animation =
-		{
-			filename = "__Bio_Farm__/graphics/entities/biolab/biolab.png",
-			width = 128,
-			height = 128,
-			frame_count = 16,
-			line_length = 4,
-			shift = {0.65, -0.25},
-			scale = 1.2,
-			animation_speed = 0.25
-		},
-		working_visualisations =
-		{
-			{
-				north_position = {0.94, -0.73},
-				west_position = {-0.3, 0.02},
-				south_position = {-0.97, -1.47},
-				east_position = {0.05, -1.46},
-				animation =
-				{
-					filename = "__Bio_Farm__/graphics/icons/empty.png",
-					frame_count = 1,
-					width = 32,
-					height = 32,
-					animation_speed = 0.15
-				}
-			},
-			{
-				north_position = {1.4, -0.23},
-				west_position = {-0.3, 0.55},
-				south_position = {-1, -1},
-				east_position = {0.05, -0.96},
-				north_animation =
-				{
-					filename = "__Bio_Farm__/graphics/icons/empty.png",
-					frame_count = 1,
-					width = 32,
-					height = 32,
-					animation_speed = 0.15
-				},
-				west_animation =
-				{
-					filename = "__Bio_Farm__/graphics/icons/empty.png",
-					frame_count = 1,
-					width = 32,
-					height = 32,
-					animation_speed = 0.15
-				},
-				south_animation =
-				{
-					filename = "__Bio_Farm__/graphics/icons/empty.png",
-					frame_count = 1,
-					width = 32,
-					height = 32,
-					animation_speed = 0.15
-				}
-			}
-		},
-		crafting_speed = 1,
-		energy_source =
-		{
-			type = "electric",
-			usage_priority = "secondary-input"
-		},
-		energy_usage = "180kW",
-		ingredient_count = 4,
-		crafting_categories = {"biofarm-mod-biolab"},
-		fluid_boxes =
-		{
-			{
-				production_type = "input",
-				pipe_covers = pipecoverspictures(),
-				base_area = 10,
-				base_level = -1,
-				pipe_connections = {{ type="input", position = {-1, -2} }}
-			},
-			{
-				production_type = "input",
-				pipe_covers = pipecoverspictures(),
-				base_area = 10,
-				base_level = -1,
-				pipe_connections = {{ type="input", position = {1, -2} }}
-			},
-			{
-				production_type = "output",
-				pipe_covers = pipecoverspictures(),
-				base_level = 1,
-				pipe_connections = {{ position = {-1, 2} }}
-			},
-			{
-				production_type = "output",
-				pipe_covers = pipecoverspictures(),
-				base_level = 1,
-				pipe_connections = {{ position = {1, 2} }}
-			}
-		}
-	} 
-  
   }
 )
+
+
+
+--- Bio Gardens
+data:extend({
+
+   
+  {
+    type = "assembling-machine",
+    name = "Bio_Garden",
+	icon = "__Bio_Farm__/graphics/icons/bio_garden_icon.png",
+    flags = {"placeable-neutral", "placeable-player", "player-creation"},
+    minable = {hardness = 0.2, mining_time = 0.5, result = "Bio_Garden"},
+    fast_replaceable_group = "Bio_Garden",
+    max_health = 150,
+    corpse = "big-remnants",
+	
+    collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
+    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    fluid_boxes =
+    {
+      {
+        production_type = "input",
+        pipe_picture = assembler3pipepictures(),
+        pipe_covers = pipecoverspictures(),
+        base_area = 10,
+        base_level = -1,
+        pipe_connections = {{ type="input", position = {0, -2} }}
+      },
+      off_when_no_fluid_recipe = true
+    },
+	animation =
+    {
+      filename = "__Bio_Farm__/graphics/entities/biogarden/bio_garden.png",
+      width = 113,
+      height = 91,
+      frame_count = 1,
+      shift = {0.2, 0.15}
+    },
+    open_sound = { filename = "__base__/sound/machine-open.ogg", volume = 0.85 },
+    close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.75 },
+    working_sound =
+    {
+      sound = { { filename = "__base__/sound/electric-furnace.ogg", volume = 0.7 } },
+      idle_sound = { filename = "__base__/sound/idle1.ogg", volume = 0.6 },
+      apparent_volume = 1.5,
+    },
+    crafting_categories = {"clean-air"},
+    source_inventory_size = 1,
+    result_inventory_size = 1,
+    crafting_speed = 2.0,
+    energy_source =
+    {
+      type = "electric",
+      usage_priority = "secondary-input",
+      emissions = -0.3
+    },
+    energy_usage = "200kW",
+    ingredient_count = 1,
+    module_slots = 0
+  },
+ 
+ 
+	
+	  
+  })

@@ -46,7 +46,7 @@ function On_Built(event)
 		  
 
 	end
-
+--[[
 	--- Cokery Swicthout
 	if event.created_entity.name == "bf-cokery-dummy" then
 		local surface = event.created_entity.surface
@@ -54,6 +54,7 @@ function On_Built(event)
 		surface.create_entity({name = "bf-cokery", position = event.created_entity.position, force = force})
 		event.created_entity.destroy()
 	end
+	]]
 end
 
 

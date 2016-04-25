@@ -12,22 +12,18 @@ data:extend(
 
 	{
 		type = "recipe-category",
-		name = "biofarm-mod-hydroculture"
-	},
-
-	{
-		type = "recipe-category",
 		name = "biofarm-mod-bioreactor"
 	},
 
 	{
 		type = "recipe-category",
-		name = "biofarm-mod-biolab"
-	},
-
-	{
-		type = "recipe-category",
 		name = "biofarm-mod-dummy"
+	},
+	
+	-- Bio Garden
+	{
+    type = "recipe-category",
+    name = "clean-air"
 	}
 }
 )

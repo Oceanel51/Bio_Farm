@@ -21,8 +21,8 @@ data:extend({
   {
     type= "item",
     name= "bf_light_for_Bio_Farm",
-    icon = "__Bio_Farm__/graphics/icons/empty.png",
-    flags= { "goes-to-quickbar" },
+    icon = "__Bio_Farm__/graphics/icons/Bio_Farm_Lamp.png",
+    flags = {"goes-to-main-inventory", "hidden"},
     subgroup = "production-machine",
     place_result = "bf_light_for_Bio_Farm",
     stack_size= 10,
@@ -33,9 +33,8 @@ data:extend({
     type = "item",
     name = "bf_medium-electric-pole_for_Bio_Farm",
     icon = "__Bio_Farm__/graphics/icons/empty.png",
-    flags = {"goes-to-quickbar"},
+    flags = {"goes-to-main-inventory", "hidden"},
     subgroup = "energy-pipe-distribution",
-    order = "a[energy]-b[medium-electric-pole]",
     place_result = "bf_medium-electric-pole_for_Bio_Farm",
     stack_size = 50,
 	enable = false,
@@ -43,10 +42,9 @@ data:extend({
   {
     type = "item",
     name = "bf_solar-panel_for_Bio_Farm",
-    icon = "__Bio_Farm__/graphics/icons/empty.png",
-    flags = {"goes-to-quickbar"},
+    icon = "__Bio_Farm__/graphics/icons/Bio_Farm_Solar.png",
+    flags = {"goes-to-main-inventory", "hidden"},
     subgroup = "energy",
-    order = "d[solar-panel]-a[solar-panel]",
     place_result = "bf_solar-panel_for_Bio_Farm",
     stack_size = 50,
 	enable = false,
@@ -60,7 +58,7 @@ data:extend({
 		fuel_value = "2MJ",
 		subgroup = "raw-material",
 		order = "b[woodpulp]",
-		stack_size = 100
+		stack_size = 200
 	},  
 
   
@@ -149,18 +147,7 @@ data:extend({
 		subgroup = "intermediate-product",
 		order = "c[fertilizer]",
 		stack_size = 200
-	},
-
-	
-	{
-		type = "item",
-		name = "bf-liquid-nitrogen-barrel",
-		icon = "__Bio_Farm__/graphics/icons/liquid-nitrogen-barrel.png",
-		flags = {"goes-to-main-inventory"},
-		subgroup = "intermediate-product",
-		order = "b[liquid-nitrogen-barrel]",
-		stack_size = 10
-	},
+	},	
 
 	{
 		type = "item",
@@ -173,15 +160,14 @@ data:extend({
 	},
 
 
-
 	{
 		type = "item",
 		name = "bf-cokery",
 		icon = "__Bio_Farm__/graphics/icons/cokery.png",
 		flags = {"goes-to-quickbar"},
 		subgroup = "production-machine",
-		order = "a[cokery]",
-		place_result = "bf-cokery-dummy",
+		order = "zzz[cokery]",
+		place_result = "bf-cokery",
 		stack_size = 10
 	},
 
@@ -191,7 +177,7 @@ data:extend({
 		icon = "__Bio_Farm__/graphics/icons/stone-crusher.png",
 		flags = {"goes-to-quickbar"},
 		subgroup = "production-machine",
-		order = "a[stone-crusher]",
+		order = "zzz[stone-crusher]",
 		place_result = "bf-stone-crusher",
 		stack_size = 10
 	},
@@ -202,23 +188,36 @@ data:extend({
 		icon = "__Bio_Farm__/graphics/icons/bioreactor.png",
 		flags = {"goes-to-quickbar"},
 		subgroup = "production-machine",
-		order = "a[bioreactor]",
+		order = "zzz[bioreactor]",
 		place_result = "bf-bioreactor",
 		stack_size = 10
 	},
-
-	{
-		type = "item",
-		name = "bf-biolab",
-		icon = "__Bio_Farm__/graphics/icons/biolab.png",
-		flags = {"goes-to-quickbar"},
-		subgroup = "production-machine",
-		order = "a[biolab]",
-		place_result = "bf-biolab",
-		stack_size = 10
-	},
-
-
 	
-}
-)
+})
+
+-------- Bio Garden
+
+data:extend({
+  
+    {
+    type = "item",
+    name = "Bio_Garden",
+    icon = "__Bio_Farm__/graphics/icons/bio_garden_icon.png",
+    flags = { "goes-to-quickbar" },
+    subgroup = "production-machine",
+    order = "f[Bio_Garden]",
+    place_result = "Bio_Garden",
+    stack_size = 10
+  },
+  
+  {
+    type = "item",
+    name = "void",
+    icon = "__Bio_Farm__/graphics/icons/void.png",
+    flags = {"goes-to-main-inventory", "hidden"},
+    subgroup = "raw-material",
+    order = "void",
+    stack_size = 100
+  },
+  
+  })

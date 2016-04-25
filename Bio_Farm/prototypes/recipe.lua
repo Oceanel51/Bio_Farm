@@ -1,50 +1,48 @@
 data:extend({
 	--- Seedling
 	{
-    type = "recipe",
-    name = "bf-seedling",
-    enabled = "false",
-	subgroup = "raw-material",
-    energy_required = 0.5,
-	icon = "__Bio_Farm__/graphics/icons/Seedling.png",
-    ingredients = {{"raw-wood",1}},
-	results=
-    {
-      {type="item", name="bf-seedling", amount=2},
-      {type="item", name="bf-woodpulp", amount=1}
-    },
-	
+		type = "recipe",
+		name = "bf-seedling",
+		enabled = "false",
+		subgroup = "raw-material",
+		energy_required = 0.5,
+		icon = "__Bio_Farm__/graphics/icons/Seedling.png",
+		ingredients = {{"raw-wood",1}},
+		results=
+		{
+		  {type="item", name="bf-seedling", amount=2},
+		  {type="item", name="bf-woodpulp", amount=1}
+		},
 	},
-	
 	--- Bio Farm
 	{
-    type = "recipe",
-    name = "bf_bio_farm",
-    enabled = "false",
-    ingredients = 
-    {
-      {"iron-stick",20},
-      {"copper-cable",10},
-      {"stone",20},
-      {"small-lamp",10}
-    },
-    result = "bf_bio_farm"
+		type = "recipe",
+		name = "bf_bio_farm",
+		enabled = "false",
+		ingredients = 
+		{
+		  {"iron-stick",20},
+		  {"copper-cable",10},
+		  {"stone",20},
+		  {"small-lamp",10}
+		},
+		result = "bf_bio_farm"
 	},
 	
 		--- Raw Wood from Water
 	{
-    type = "recipe",
-    name = "bf-Logs_Mk1",
-    category = "biofarm-mod-dummy",
-    enabled = "false",
-    energy_required = 400,
-	ingredients =
-    {
-      {type="item", name="bf-seedling", amount=20},     
-      {type="fluid", name="water", amount=100},
-    },
-    result_count = 40,
-    result = "raw-wood"
+		type = "recipe",
+		name = "bf-Logs_Mk1",
+		category = "biofarm-mod-dummy",
+		enabled = "false",
+		energy_required = 400,
+		ingredients =
+		{
+		  {type="item", name="bf-seedling", amount=20},     
+		  {type="fluid", name="water", amount=100},
+		},
+		result_count = 40,
+		result = "raw-wood"
 	},
 	
 		--- Raw Wood from Water & Fertilizer
@@ -108,23 +106,7 @@ data:extend({
 data:extend(
 {
 
-	-- RECIPE-DUMMY FOR FIELD TO USE FERTILIZER
---[[
-	{
-		type = "recipe",
-		name = "fertwork",
-		icon = "__Bio_Farm__/graphics/icons/fertilizer.png",
-		subgroup = "raw-material",
-		order = "b[charcoal]",
-		hidden = true,
-		category = "biofarm-mod-dummy",
-		energy_required = 18,
-		ingredients = {{"bf-fertilizer",101}},
-		result = "bf-charcoal",
-		result_count = 10,
-		enabled = "true"
-	},
-	]]
+
 	-- CHARCOAL 1
 	{
 		type = "recipe",
@@ -154,7 +136,7 @@ data:extend(
 		enabled = "false"
 	},
 	
-	-- COAL --
+	-- COAL 1 --
 	{
 		type = "recipe",
 		name = "bf-coal",
@@ -166,7 +148,7 @@ data:extend(
 		result_count = 2,
 		enabled = "false"
 	},
-
+	-- COAL 2 --
 	{
 		type = "recipe",
 		name = "bf-coal-2",
@@ -226,7 +208,7 @@ data:extend(
 	{
 		type = "recipe",
 		name = "bf-liquid-air",
-		category = "biofarm-mod-biolab",
+		category = "chemistry",
 		subgroup = "intermediate-product",
 		energy_required = 10,
 		ingredients = {},
@@ -240,7 +222,7 @@ data:extend(
 	{
 		type = "recipe",
 		name = "bf-liquid-nitrogen",
-		category = "biofarm-mod-biolab",
+		category = "chemistry",
 		subgroup = "intermediate-product",
 		energy_required = 10,
 		ingredients ={{type="fluid", name="bf-liquid-air", amount=2}},
@@ -254,7 +236,7 @@ data:extend(
 	{
 		type = "recipe",
 		name = "bf-liquid-co2",
-		category = "biofarm-mod-biolab",
+		category = "chemistry",
 		subgroup = "intermediate-product",
 		energy_required = 10,
 		ingredients ={{type="fluid", name="bf-liquid-air", amount=1}},
@@ -265,46 +247,6 @@ data:extend(
 		enabled = "false"
 	},
 
-	-- FILL NITROGEN-BARREL --
-	{
-		type = "recipe",
-		name = "bf-fill-liquid-nitrogen-barrel",
-		category = "crafting-with-fluid",
-		energy_required = 1,
-		subgroup = "intermediate-product",
-		order = "b[fill-liquid-nitrogen-barrel]",
-		icon = "__Bio_Farm__/graphics/icons/fill-liquid-nitrogen-barrel.png",
-		ingredients =
-		{
-			{type="fluid", name="bf-liquid-nitrogen", amount=25},
-			{type="item", name="empty-barrel", amount=1},
-		},
-		results=
-		{
-			{type="item", name="bf-liquid-nitrogen-barrel", amount=1}
-		},
-		enabled = "false"
-	},
-	-- EMPTY NITROGEN-BARREL --
-	{
-		type = "recipe",
-		name = "bf-empty-liquid-nitrogen-barrel",
-		category = "crafting-with-fluid",
-		energy_required = 1,
-		subgroup = "intermediate-product",
-		order = "c[empty-liquid-nitrogen-barrel]",
-		icon = "__Bio_Farm__/graphics/icons/empty-liquid-nitrogen-barrel.png",
-		ingredients =
-		{
-		  {type="item", name="bf-liquid-nitrogen-barrel", amount=1}
-		},
-		results=
-		{
-			{type="fluid", name="bf-liquid-nitrogen", amount=25},
-			{type="item", name="empty-barrel", amount=1}
-		},
-		enabled = "false"
-	},
 	-- PHOSPHATE --
 	{
 		type = "recipe",
@@ -343,30 +285,10 @@ data:extend(
 		},
 		enabled = "false"
 	},
-	-- FERTILIZER SOLID --
-	{
+	-- FERTILIZER--
+{
 		type = "recipe",
-		name = "bf-fertilizer1",
-		category = "chemistry",
-		energy_required = 125,
-		icon = "__Bio_Farm__/graphics/icons/fertilizer_32.png",
-		ingredients =
-		{
-			{type="item", name="bf-phosphate", amount=25},
-			{type="item", name="bf-potassium", amount=50},
-			{type="item", name="bf-liquid-nitrogen-barrel", amount=1},
-			{type="item", name="bf-ash", amount=125}
-		},
-		results=
-		{
-			{type="item", name="bf-fertilizer", amount=100}
-		},
-		enabled = "false"
-	},
-	-- FERTILIZER LIQUID --
-	{
-		type = "recipe",
-		name = "bf-fertilizer2",
+		name = "bf-fertilizer",
 		category = "chemistry",
 		energy_required = 5,
 		icon = "__Bio_Farm__/graphics/icons/fertilizer_32.png",
@@ -404,6 +326,7 @@ data:extend(
 		},
 		enabled = "false"
 	},
+	
 	{
 		type = "recipe",
 		name = "bf-biomass-1",
@@ -428,7 +351,7 @@ data:extend(
 	{
 		type = "recipe",
 		name = "bf-cellulose",
-		category = "biofarm-mod-biolab",
+		category = "chemistry",
 		energy_required = 10,
 		ingredients =
 		{
@@ -444,8 +367,9 @@ data:extend(
 	{
 		type = "recipe",
 		name = "bf-platic",
-		category = "biofarm-mod-biolab",
-		subgroup = "intermediate-product",
+		category = "chemistry",
+		subgroup = "raw-material",
+		order = "g[plastic-bar]",
 		energy_required = 1,
 		ingredients =
 		{
@@ -485,25 +409,52 @@ data:extend(
 		result_count = 1
 	},
 
+})
+
+
+
+--- Bio Gardens
+data:extend({
+
+
+
 	{
 		type = "recipe",
-		name = "bf-biolab",
+		name = "Bio_Garden",
+		icon = "__Bio_Farm__/graphics/entities/biogarden/bio_garden.png",
+		energy_required = 10.0,
+		enabled = "false",
 		ingredients =
 		{
-			{"steel-plate", 5},
-			{"iron-gear-wheel", 5},
-			{"electronic-circuit", 5},
-			{"pipe", 5}
+		  {"stone-wall", 12},
+		  {"bf-crushed-stone", 50},
+		  {"bf-seedling", 50}
 		},
-		result = "bf-biolab",
-		enabled = "false",
-		result_count = 1
+		result = "Bio_Garden"
 	},
+ 
+ 
 
-
-	
-
-}
+	{
+    type = "recipe",
+    name = "Clean_Air",
+    category = "clean-air",
+    enabled = "false",
+    --hidden = "true",
+    energy_required = 50,
+    ingredients =
+    {
+      {type="fluid", name="water", amount=50},
+	  {type="item", name="bf-fertilizer", amount=2}  
+    },
+    results=
+    {
+      {type="item", name="void", amount=1, probability=0},
+    },
+    icon = "__Bio_Farm__/graphics/icons/clean-air.png",
+    order = "clean-air"
+	},
+		  
+  }
 )
-
 

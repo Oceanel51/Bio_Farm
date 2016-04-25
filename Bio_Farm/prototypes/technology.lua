@@ -19,7 +19,19 @@ data:extend({
         {
             type = "unlock-recipe",
             recipe = "bf_bio_farm"
-        }
+        },
+		
+		---- Bio Garden
+		{
+        type = "unlock-recipe",
+        recipe = "Bio_Garden"
+		},
+		{
+        type = "unlock-recipe",
+        recipe = "Clean_Air"
+		}
+		
+		
       },
       prerequisites = {"optics"},
       unit =
@@ -54,10 +66,7 @@ data:extend(
 				type = "unlock-recipe",
 				recipe = "bf-charcoal-2"
 			},
-			{
-				type = "unlock-recipe",
-				recipe = "bf-coke-coal"
-			},
+
 			{
 				type = "unlock-recipe",
 				recipe = "bf-ash"
@@ -92,6 +101,10 @@ data:extend(
 			{
 				type = "unlock-recipe",
 				recipe = "bf-coal"
+			},
+			{
+				type = "unlock-recipe",
+				recipe = "bf-coke-coal"
 			},
 		},
 		prerequisites = {
@@ -138,10 +151,7 @@ data:extend(
 		icon_size = 128,
 		icon = "__Bio_Farm__/graphics/technology/Fertilizer_128.png",
 		effects = {
-			{
-				type = "unlock-recipe",
-				recipe = "bf-biolab"
-			},
+
 			{
 				type = "unlock-recipe",
 				recipe = "bf-stone-crusher"
@@ -160,14 +170,6 @@ data:extend(
 			},
 			{
 				type = "unlock-recipe",
-				recipe = "bf-fill-liquid-nitrogen-barrel"
-			},
-			{
-				type = "unlock-recipe",
-				recipe = "bf-empty-liquid-nitrogen-barrel"
-			},
-			{
-				type = "unlock-recipe",
 				recipe = "bf-phosphate"
 			},
 			{
@@ -176,11 +178,7 @@ data:extend(
 			},
 			{
 				type = "unlock-recipe",
-				recipe = "bf-fertilizer1"
-			},
-			{
-				type = "unlock-recipe",
-				recipe = "bf-fertilizer2"
+				recipe = "bf-fertilizer"
 			},
 			{
             type = "unlock-recipe",
