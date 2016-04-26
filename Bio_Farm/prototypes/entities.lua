@@ -92,7 +92,6 @@ data:extend({
     icon = "__Bio_Farm__/graphics/icons/Bio_Farm_Lamp.png",
 	flags = {"placeable-neutral", "player-creation", "not-repairable"},
 	selectable_in_game = false,
-	---destructible = false,
     max_health = 1,
     collision_box = {{-0.0, -0.0}, {0.0, 0.0}},
 	energy_source =
@@ -101,7 +100,7 @@ data:extend({
       usage_priority = "secondary-input"
     },
     energy_usage_per_tick = "100kW",
-    light = {intensity = 1, size = 40},
+    light = {intensity = 1, size = 45},
     picture_off =
     {
       filename = "__Bio_Farm__/graphics/entities/biofarm/Bio_Farm_Idle.png",
@@ -133,7 +132,6 @@ data:extend({
     icon = "__Bio_Farm__/graphics/icons/empty.png",
 	flags = {"placeable-neutral", "player-creation", "placeable-off-grid", "not-repairable"},
 	selectable_in_game = false,
-	---destructible = false,
     max_health = 1,
     resistances = {{type = "fire", percent = 100}},
     collision_box = {{-0, -0}, {0, 0}},
@@ -209,7 +207,6 @@ data:extend({
     icon = "__Bio_Farm__/graphics/icons/Bio_Farm_Solar.png",
 	flags = {"placeable-neutral", "player-creation", "placeable-off-grid", "not-repairable"},
 	selectable_in_game = false,
-	---destructible = false,
     max_health = 1,
     resistances = {{type = "fire", percent = 100}},
     collision_box = {{-0, -0}, {0, 0}},
@@ -248,13 +245,11 @@ data:extend(
 		resistances = {{type = "fire", percent = 70}},
 		collision_box = {{-1.4, -2.0}, {1.4, 2.4}},
 		selection_box = {{-1.5, -2.5}, {1.5, 2.5}},
-		--module_slots = 2,
-		--allowed_effects = {"consumption", "speed"},
 		module_specification =
 		{
 			module_slots = 2
 		},
-		allowed_effects = {"consumption", "speed"},
+		allowed_effects = {"consumption", "speed", "pollution"},
 		animation =
 		{
 			north =
@@ -522,7 +517,46 @@ data:extend({
     module_slots = 0
   },
  
- 
+  {
+    type = "lamp",
+    name = "bf_light_for_Bio_Garden",
+    icon = "__base__/graphics/icons/small-lamp.png",
+	flags = {"placeable-neutral", "player-creation", "not-repairable"},
+	selectable_in_game = false,
+	max_health = 1,
+    collision_box = {{-0.0, -0.0}, {0.0, 0.0}},
+	energy_source =
+    {
+      type = "electric",
+      usage_priority = "secondary-input"
+    },
+    energy_usage_per_tick = "5kW",
+    light = {intensity = 1, size = 40},
+    picture_off =
+    {
+      filename = "__base__/graphics/entity/small-lamp/light-off.png",
+      priority = "low",
+      width = 0,
+      height = 0,
+      frame_count = 1,
+      axially_symmetrical = false,
+      direction_count = 1,
+	  shift = {0.75, 0},
+    },
+    picture_on =
+    {
+      filename = "__base__/graphics/entity/small-lamp/light-on-patch.png",
+      priority = "low",
+      width = 0,
+      height = 0,
+      frame_count = 1,
+      axially_symmetrical = false,
+      direction_count = 1,
+	  shift = {0.75, 0},
+    },
+
+  },
+  
 	
 	  
   })

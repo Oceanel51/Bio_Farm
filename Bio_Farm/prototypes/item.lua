@@ -211,13 +211,26 @@ data:extend({
   },
   
   {
+    type= "item",
+    name= "bf_light_for_Bio_Garden",
+    icon = "__base__/graphics/icons/small-lamp.png",
+    flags = {"hidden"},
+    subgroup = "production-machine",
+    place_result = "bf_light_for_Bio_Garden",
+    stack_size= 10,
+	enable = false,
+  },
+  
+  {
     type = "item",
     name = "void",
-    icon = "__Bio_Farm__/graphics/icons/void.png",
+    icon = "__Bio_Farm__/graphics/icons/Clean_Air2.png",
     flags = {"goes-to-main-inventory", "hidden"},
     subgroup = "raw-material",
     order = "void",
     stack_size = 100
   },
+  
+  
   
   })

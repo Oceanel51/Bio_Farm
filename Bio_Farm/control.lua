@@ -45,11 +45,29 @@ function On_Built(event)
 		create_lamp.minable = false
 		create_lamp.destructible = false
 		
-		group_entities(cantor(position.x,position.y), { b_farm, create_pole, create_panel, create_lamp })
-		  
+		group_entities(cantor(position.x,position.y), { b_farm, create_pole, create_panel, create_lamp })	  
 
 	end
 
+	
+	    --- Bio Garden has been built
+	local entity = event.created_entity
+	if entity and entity.name == "Bio_Garden" then
+		local surface = entity.surface
+		local force = entity.force
+		local position = entity.position		   
+		local b_garden = entity
+		local g_lamp_name = "bf_light_for_Bio_Garden"      
+	  
+		local create_g_lamp = surface.create_entity({name = g_lamp_name, position = position, force = force})
+		  
+		create_g_lamp.minable = false
+		create_g_lamp.destructible = false
+		
+		group_entities(cantor(position.x,position.y), { b_garden, create_g_lamp })	  
+
+	end
+	
 end
 
 --[[
@@ -93,6 +111,25 @@ function On_Remove(event)
         ungroup_entities(pos_hash)
 	end
 
+		
+	--- Bio Garden has been removed
+	local entity = event.entity
+   	if entity and entity.name == "Bio_Garden" then
+		local pos_hash = cantor(entity.position.x,entity.position.y)
+        local entity_group = getGroup_entities(pos_hash)
+        if entity_group then
+            for ix, vx in ipairs(entity_group) do
+                if vx == entity then
+                    --vx.destroy()
+                else
+                    vx.destroy()
+                end
+            end
+        end
+        ungroup_entities(pos_hash)
+	end
+
+	
 end
 
 ---------------------------------------------
@@ -116,6 +153,26 @@ function On_Death(event)
         ungroup_entities(pos_hash)
 	end
 
+			
+	--- Bio Garden has been destroyed
+	local entity = event.entity
+   	if entity and entity.name == "Bio_Garden" then
+		local pos_hash = cantor(entity.position.x,entity.position.y)
+        local entity_group = getGroup_entities(pos_hash)
+        if entity_group then
+            for ix, vx in ipairs(entity_group) do
+                if vx == entity then
+                    --vx.destroy()
+                else
+                    vx.destroy()
+                end
+            end
+        end
+        ungroup_entities(pos_hash)
+	end
+
+	
+	
 end
 
 
