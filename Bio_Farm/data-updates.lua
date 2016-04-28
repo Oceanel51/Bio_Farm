@@ -4,11 +4,11 @@ require "libs.detectmod" --Detect sif NE Buildings exist
 data.raw.item["raw-wood"].stack_size = 200
 
 --- Got tierd of reaching limits...
-if data.raw.player.player.build_distance < 220 then
-	data.raw.player.player.build_distance = 220
-	data.raw.player.player.reach_distance = 200
-	data.raw.player.player.reach_resource_distance = 200
-	data.raw.player.player.drop_item_distance = 200	
+if data.raw.player.player.build_distance < 24 then
+	data.raw.player.player.build_distance = 24
+	data.raw.player.player.reach_distance = 20
+	data.raw.player.player.reach_resource_distance = 20
+	data.raw.player.player.drop_item_distance = 20
 end 
 
 
