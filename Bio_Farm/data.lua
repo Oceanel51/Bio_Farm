@@ -8,6 +8,8 @@ require("prototypes.liquids")
 NEConfig = {}
 require "libs.detectmod" --Detects if NE Buildings exist
 
+
+------- DyTech Support
 if data.raw["item"]["rubber-seed"] ~= nil then
 require("prototypes.dytech_recipe")
 
