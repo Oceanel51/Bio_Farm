@@ -223,11 +223,11 @@ data:extend({
   
   {
     type = "item",
-    name = "void",
+    name = "Purified_Air",
     icon = "__Bio_Farm__/graphics/icons/Clean_Air2.png",
     flags = {"goes-to-main-inventory", "hidden"},
     subgroup = "raw-material",
-    order = "void",
+    order = "Purified_Air",
     stack_size = 100
   },
   

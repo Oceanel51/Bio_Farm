@@ -449,7 +449,7 @@ data:extend({
     },
     results=
     {
-      {type="item", name="void", amount=1, probability=0},
+      {type="item", name="Purified_Air", amount=1, probability=0},
     },
     icon = "__Bio_Farm__/graphics/icons/clean-air.png",
     order = "clean-air"
