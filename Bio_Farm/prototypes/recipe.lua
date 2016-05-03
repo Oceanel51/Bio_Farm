@@ -441,7 +441,7 @@ data:extend({
     category = "clean-air",
     enabled = "false",
     --hidden = "true",
-    energy_required = 50,
+    energy_required = 20,
     ingredients =
     {
       {type="fluid", name="water", amount=50},
