@@ -70,26 +70,6 @@ function On_Built(event)
 	
 end
 
---[[
----------------------------------------------
-function On_Remove(event)
-	
-	--- Bio Farm has been removed
-   	if event.entity.name == "bf_bio_farm" then
-		
-		res1 = game.get_surface(1).find_entities_filtered{name="bf_medium-electric-pole_for_Bio_Farm", area=GetArea(event.entity.position, 0.8)}
-		res2 = game.get_surface(1).find_entities_filtered{name="bf_light_for_Bio_Farm", area=GetArea(event.entity.position, 0.8)}
-		res3 = game.get_surface(1).find_entities_filtered{name="bf_solar-panel_for_Bio_Farm", area=GetArea(event.entity.position, 0.8)}
-
-
-         res1[1].destroy()
-         res2[1].destroy()
-         res3[1].destroy()
-
-	end
-
-end
-]]
 
 ---------------------------------------------
 function On_Remove(event)
