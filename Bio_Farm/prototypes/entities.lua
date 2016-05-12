@@ -241,9 +241,9 @@ data:extend(
 		order = "a[cokery]",
 		minable = {hardness = 0.2, mining_time = 0.5, result = "bf-cokery"},
 		max_health = 200,
-		corpse = "big-remnants",
+		corpse = "medium-remnants",
 		resistances = {{type = "fire", percent = 70}},
-		collision_box = {{-1.4, -2.0}, {1.4, 2.4}},
+		collision_box = {{-1.2, -2.2}, {1.2, 2.2}},
 		selection_box = {{-1.5, -2.5}, {1.5, 2.5}},
 		module_specification =
 		{
@@ -295,8 +295,8 @@ data:extend(
 			{
 				north_position = { 0.0,  0.0},
 				south_position = { 0.0,  0.0},
-				west_position  = { 0.0,  0.0},	--{ 1.3, -2.0},
-				east_position  = { 0.0,  0.0},	--{ 1.3, -2.0},
+				west_position  = { 0.0,  0.0},	
+				east_position  = { 0.0,  0.0},	
 			
 				animation =
 				{
@@ -343,7 +343,7 @@ data:extend(
 									},
 							apparent_volume = 1.5
 						},
-		collision_box = {{-0.9,-0.9},{0.9,0.9}},
+		collision_box = {{-0.8,-0.8},{0.8,0.8}},
 		selection_box = {{-1.0,-1.0},{1.0,1.0}},
 		animation = {
 							filename = "__Bio_Farm__/graphics/entities/stone-crusher/stone-crusher-off-anim.png",
@@ -470,8 +470,7 @@ data:extend({
     minable = {hardness = 0.2, mining_time = 0.5, result = "Bio_Garden"},
     fast_replaceable_group = "Bio_Garden",
     max_health = 150,
-    corpse = "big-remnants",
-	
+    corpse = "medium-remnants",	
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     fluid_boxes =
