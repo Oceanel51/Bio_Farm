@@ -3,7 +3,7 @@ require ("util")
 
 
 data:extend({
-
+	------- Bio Farm
   {
     type = "assembling-machine",
     name = "bf_bio_farm",
@@ -85,7 +85,7 @@ data:extend({
     },
     allowed_effects = {"consumption", "speed"}
   },
-  
+  ------- Bio Farm Lamp
   {
     type = "lamp",
     name = "bf_light_for_Bio_Farm",
@@ -125,7 +125,7 @@ data:extend({
     },
 
   },
-  
+  ------- Bio Farm Pole
   {
     type = "electric-pole",
     name = "bf_medium-electric-pole_for_Bio_Farm",
@@ -200,7 +200,7 @@ data:extend({
       priority = "low"
     },
   },
-  
+  ------- Bio Farm Solar Panel
   {
     type = "solar-panel",
     name = "bf_solar-panel_for_Bio_Farm",
@@ -227,7 +227,7 @@ data:extend({
   
   })
  
- 
+ ---- Originally from the old Tree Farm Mod.
 data:extend(
 {
 
@@ -461,9 +461,10 @@ data:extend(
 --- Bio Gardens
 data:extend({
 
-   
+--- Bio Garden 
   {
-    type = "assembling-machine",
+    --type = "assembling-machine",
+	type = "furnace",
     name = "Bio_Garden",
 	icon = "__Bio_Farm__/graphics/icons/bio_garden_icon.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
@@ -497,7 +498,7 @@ data:extend({
     close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.75 },
     working_sound =
     {
-      sound = { { filename = "__base__/sound/electric-furnace.ogg", volume = 0.7 } },
+      sound = { { filename = "__Bio_Farm__/sound/rainforest_ambience.ogg", volume = 0.7 } },
       idle_sound = { filename = "__base__/sound/idle1.ogg", volume = 0.6 },
       apparent_volume = 1.5,
     },
@@ -509,13 +510,14 @@ data:extend({
     {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions = -0.6
+      emissions = 0.6
     },
     energy_usage = "200kW",
     ingredient_count = 1,
     module_slots = 0
   },
  
+ -- Bio Garden Light
   {
     type = "lamp",
     name = "bf_light_for_Bio_Garden",
@@ -555,7 +557,5 @@ data:extend({
     },
 
   },
-  
-	
-	  
+  	  
   })
