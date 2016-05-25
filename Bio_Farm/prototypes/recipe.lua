@@ -201,7 +201,7 @@ data:extend(
 		energy_required = 5,
 		ingredients = {{"stone",1}},
 		result = "bf-crushed-stone",
-		result_count = 2,
+		result_count = 3,
 		enabled = "false"
 	},
 	-- LIQUID-AIR --
@@ -445,7 +445,7 @@ data:extend({
     ingredients =
     {
       {type="fluid", name="water", amount=50},
-	  {type="item", name="bf-fertilizer", amount=2}  
+	  {type="item", name="bf-fertilizer", amount=1}  
     },
     results=
     {
