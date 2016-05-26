@@ -463,9 +463,8 @@ data:extend({
 
 --- Bio Garden 
   {
-    --type = "assembling-machine",
-	type = "furnace",
-    name = "Bio_Garden",
+    type = "assembling-machine",
+	name = "Bio_Garden",
 	icon = "__Bio_Farm__/graphics/icons/bio_garden_icon.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Bio_Garden"},
@@ -510,7 +509,7 @@ data:extend({
     {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions = 0.6
+      emissions = -0.4
     },
     energy_usage = "200kW",
     ingredient_count = 1,
