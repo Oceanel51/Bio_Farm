@@ -35,7 +35,7 @@ data:extend({
 		name = "bf-Logs_Mk1",
 		category = "biofarm-mod-dummy",
 		enabled = "false",
-		energy_required = 400,
+		energy_required = 500,
 		ingredients =
 		{
 		  {type="item", name="bf-seedling", amount=20},     
