@@ -346,11 +346,11 @@ data:extend(
 		collision_box = {{-0.8,-0.8},{0.8,0.8}},
 		selection_box = {{-1.0,-1.0},{1.0,1.0}},
 		animation = {
-							filename = "__Bio_Farm__/graphics/entities/stone-crusher/stone-crusher-off-anim.png",
+							filename = "__Bio_Farm__/graphics/entities/stone-crusher/stone_crusher_anim.png",
 							priority = "high",
 							width = 65,
 							height = 78,
-							frame_count = 1,
+							frame_count = 11,
 							animation_speed = 0.5,
 							shift = {0.0, -0.1}
 						},
@@ -477,7 +477,7 @@ data:extend({
     {
       {
         production_type = "input",
-        pipe_picture = assembler3pipepictures(),
+        --pipe_picture = assembler3pipepictures(),
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
@@ -487,17 +487,21 @@ data:extend({
     },
 	animation =
     {
-      filename = "__Bio_Farm__/graphics/entities/biogarden/bio_garden.png",
-      width = 113,
-      height = 91,
-      frame_count = 1,
-      shift = {0.2, 0.15}
+      filename = "__Bio_Farm__/graphics/entities/biogarden/bio_garden_x.png",
+      width = 160,
+      height = 160,
+	  frame_count = 12,
+	  line_length = 4,
+	  animation_speed = 0.025,
+      shift = {0.45, 0}
+	  
+	  
     },
     open_sound = { filename = "__base__/sound/machine-open.ogg", volume = 0.85 },
     close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.75 },
     working_sound =
     {
-      sound = { { filename = "__Bio_Farm__/sound/rainforest_ambience.ogg", volume = 0.7 } },
+      sound = { { filename = "__Bio_Farm__/sound/rainforest_ambience.ogg", volume = 0.8 } },
       idle_sound = { filename = "__base__/sound/idle1.ogg", volume = 0.6 },
       apparent_volume = 1.5,
     },
