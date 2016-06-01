@@ -4,12 +4,14 @@ data:extend({
 	{
 		type = "recipe",
 		name = "bf_Bio_Solar_Farm",
-		--enabled = "false",
-		enabled = "true",
+		enabled = "false",
+		--enabled = "true",
 		ingredients = 
 		{
-		  {"solar-panel",5},
-
+			{"solar-panel",20},
+			{"medium-electric-pole",5},
+			{"concrete",20},
+					
 		},
 		result = "bf_Bio_Solar_Farm"
 	},

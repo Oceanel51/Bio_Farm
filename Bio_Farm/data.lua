@@ -1,13 +1,24 @@
-require("prototypes.entities")
-require("prototypes.item")
-require("prototypes.recipe")
-require("prototypes.technology")
-require("prototypes.recipe-categories")
-require("prototypes.liquids")
+--- Bio Farm
+require("prototypes.Bio_Farm.entities")
+require("prototypes.Bio_Farm.item")
+require("prototypes.Bio_Farm.recipe")
+require("prototypes.Bio_Farm.liquids")
+require("prototypes.Bio_Farm.recipe-categories")
 
+
+--- Bio Solar Farm
 require("prototypes.Bio_Solar_Farm.entities")
 require("prototypes.Bio_Solar_Farm.item")
 require("prototypes.Bio_Solar_Farm.recipe")
+
+
+-- Bio Garden
+require("prototypes.Bio_Garden.entities")
+require("prototypes.Bio_Garden.item")
+require("prototypes.Bio_Garden.recipe")
+
+-- Tech
+require("prototypes.technology")
 
 
 NEConfig = {}
@@ -16,7 +27,7 @@ require "libs.detectmod" --Detects if NE Buildings exist
 
 ------- DyTech Support
 if data.raw["item"]["rubber-seed"] ~= nil then
-require("prototypes.dytech_recipe")
+require("prototypes.Bio_Farm.dytech_recipe")
 
 
 

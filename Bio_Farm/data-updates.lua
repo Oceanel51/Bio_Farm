@@ -14,10 +14,6 @@ if data.raw.player.player.build_distance < 24 then
 end 
 ]] 
 
-------- Adds a Mk3 recipe for wood if you're playing with Natural Evolution Buildings
-if NEConfig.mod.NEBuildings then
-
-
 
 	function add_technology_recipe (technology, recipe)
 	  if data.raw.technology[technology] and data.raw.recipe[recipe] then
@@ -32,6 +28,12 @@ if NEConfig.mod.NEBuildings then
 	  end
 	end
 	
+
+------- Adds a Mk3 recipe for wood if you're playing with Natural Evolution Buildings
+if NEConfig.mod.NEBuildings then
+
+
+
 	add_technology_recipe ("bf-advanced-biotechnology", "bf-Logs_Mk3")
 	add_technology_recipe ("bf-advanced-biotechnology", "bf-adv-fertilizer")
 	table.insert(data.raw.recipe["bf-Logs_Mk3"].ingredients,{type="item", name="bf-adv-fertilizer", amount=5})
@@ -43,3 +45,10 @@ if NEConfig.mod.NEBuildings then
 
 	
 end
+
+
+	--- Adds Solar Farm to solar-energy Tecj
+	add_technology_recipe ("solar-energy", "bf_Bio_Solar_Farm")
+	
+
+	
