@@ -22,9 +22,9 @@ end
 
 ---------------------------------------------
 function On_Built(event)
-    
+    local entity = event.created_entity
     --- Bio Farm has been built
-	local entity = event.created_entity
+	
 	if entity and entity.name == "bf_bio_farm" then
 		local surface = entity.surface
 		local force = entity.force
@@ -51,7 +51,7 @@ function On_Built(event)
 
 	
 	    --- Bio Garden has been built
-	local entity = event.created_entity
+
 	if entity and entity.name == "Bio_Garden" then
 		local surface = entity.surface
 		local force = entity.force
@@ -65,6 +65,29 @@ function On_Built(event)
 		create_g_lamp.destructible = false
 		
 		group_entities(cantor(position.x,position.y), { b_garden, create_g_lamp })	  
+
+	end
+	
+		
+	    --- Bio Solar Farm has been built
+
+	if entity and entity.name == "bf_Bio_Solar_Farm" then
+		local surface = entity.surface
+		local force = entity.force
+		local position = entity.position		   
+		local solar_farm = entity
+		local pole_name = "bf_medium-electric-pole_for_Bio_Farm"  		
+		local sf_image = "bf_Bio_Solar_Farm_Image"   
+		
+		local create_sf_pole = surface.create_entity({name = pole_name, position = position, force = force})
+		local create_sf_image = surface.create_entity({name = sf_image, position = position, force = force})
+		
+		create_sf_pole.minable = false
+		create_sf_pole.destructible = false 
+		create_sf_image.minable = false
+		create_sf_image.destructible = false
+		
+		group_entities(cantor(position.x,position.y), { solar_farm, create_sf_pole, create_sf_image })	  
 
 	end
 	
@@ -109,6 +132,25 @@ function On_Remove(event)
         ungroup_entities(pos_hash)
 	end
 
+			
+	--- Bio Solar Farm has been removed
+	local entity = event.entity
+   	if entity and entity.name == "bf_Bio_Solar_Farm" then
+		local pos_hash = cantor(entity.position.x,entity.position.y)
+        local entity_group = getGroup_entities(pos_hash)
+        if entity_group then
+            for ix, vx in ipairs(entity_group) do
+                if vx == entity then
+                    --vx.destroy()
+                else
+                    vx.destroy()
+                end
+            end
+        end
+        ungroup_entities(pos_hash)
+	end
+
+	
 	
 end
 
@@ -137,6 +179,23 @@ function On_Death(event)
 	--- Bio Garden has been destroyed
 	local entity = event.entity
    	if entity and entity.name == "Bio_Garden" then
+		local pos_hash = cantor(entity.position.x,entity.position.y)
+        local entity_group = getGroup_entities(pos_hash)
+        if entity_group then
+            for ix, vx in ipairs(entity_group) do
+                if vx == entity then
+                    --vx.destroy()
+                else
+                    vx.destroy()
+                end
+            end
+        end
+        ungroup_entities(pos_hash)
+	end
+
+		--- Bio Solar Farm has been destroyed
+	local entity = event.entity
+   	if entity and entity.name == "bf_Bio_Solar_Farm" then
 		local pos_hash = cantor(entity.position.x,entity.position.y)
         local entity_group = getGroup_entities(pos_hash)
         if entity_group then

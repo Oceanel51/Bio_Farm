@@ -90,7 +90,7 @@ data:extend({
     type = "lamp",
     name = "bf_light_for_Bio_Farm",
     icon = "__Bio_Farm__/graphics/icons/Bio_Farm_Lamp.png",
-	flags = {"placeable-neutral", "player-creation", "not-repairable"},
+	flags = {"placeable-neutral", "player-creation", "placeable-off-grid", "not-repairable"},
 	selectable_in_game = false,
     max_health = 1,
     collision_box = {{-0.0, -0.0}, {0.0, 0.0}},

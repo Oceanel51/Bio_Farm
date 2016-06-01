@@ -5,6 +5,11 @@ require("prototypes.technology")
 require("prototypes.recipe-categories")
 require("prototypes.liquids")
 
+require("prototypes.Bio_Solar_Farm.entities")
+require("prototypes.Bio_Solar_Farm.item")
+require("prototypes.Bio_Solar_Farm.recipe")
+
+
 NEConfig = {}
 require "libs.detectmod" --Detects if NE Buildings exist
 
