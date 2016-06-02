@@ -1,6 +1,6 @@
-require "defines"
-require "util"
-require "libs/util_ext"
+require ("defines")
+require ("util")
+require ("scripts.util_ext")
 
 
 script.on_init(function()

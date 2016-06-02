@@ -1,7 +1,13 @@
 
-NEConfig = {}
-require "libs.detectmod" --Detect sif NE Buildings exist
-data.raw.item["raw-wood"].stack_size = 200
+--- Help Files
+require ("scripts.detectmod") --Detect supported Mods, currently DyTechWar and Bob's Enemies and others
+require ("scripts.item-functions") -- From Bob's Libary 
+require ("scripts.recipe-functions") -- From Bob's Libary 
+require ("scripts.technology-functions") -- From Bob's Libary 
+
+
+---- Inrease Wood Stack Size
+data.raw.item["raw-wood"].stack_size = 400
 
 
 --- Got tierd of reaching limits...
@@ -14,41 +20,32 @@ if data.raw.player.player.build_distance < 24 then
 end 
 ]] 
 
-
-	function add_technology_recipe (technology, recipe)
-	  if data.raw.technology[technology] and data.raw.recipe[recipe] then
-		local addit = true
-		if not data.raw.technology[technology].effects then
-		  data.raw.technology[technology].effects = {}
-		end
-		for i, effect in pairs(data.raw.technology[technology].effects) do
-		  if effect.type == "unlock-recipe" and effect.recipe == recipe then addit = false end
-		end
-		if addit then table.insert(data.raw.technology[technology].effects,{type = "unlock-recipe", recipe = recipe}) end
-	  end
-	end
+--- Adds Solar Farm to solar-energy Tech
+bobmods.lib.add_technology_recipe ("solar-energy", "bf_Bio_Solar_Farm")
 	
-
+	
 ------- Adds a Mk3 recipe for wood if you're playing with Natural Evolution Buildings
-if NEConfig.mod.NEBuildings then
+if BI_Config.mod.NEBuildings then
 
 
-
-	add_technology_recipe ("bf-advanced-biotechnology", "bf-Logs_Mk3")
-	add_technology_recipe ("bf-advanced-biotechnology", "bf-adv-fertilizer")
+	bobmods.lib.add_technology_recipe ("bf-advanced-biotechnology", "bf-Logs_Mk3")
+	bobmods.lib.add_technology_recipe ("bf-advanced-biotechnology", "bf-adv-fertilizer")
 	table.insert(data.raw.recipe["bf-Logs_Mk3"].ingredients,{type="item", name="bf-adv-fertilizer", amount=5})
 	table.insert(data.raw.recipe["bf-adv-fertilizer"].ingredients,{type="fluid", name="NE_enhanced-nutrient-solution", amount=50})
 
 	--- Adds Clean Air 2 recipe
-	add_technology_recipe ("bf-advanced-biotechnology", "Clean_Air2")
+	bobmods.lib.add_technology_recipe ("bf-advanced-biotechnology", "Clean_Air2")
 	table.insert(data.raw.recipe["Clean_Air2"].ingredients,{type="item", name="bf-adv-fertilizer", amount=1})
 
+---- Add Bio Fuel
+	require("prototypes.Bio_Fuel.fluid")
+	require("prototypes.Bio_Fuel.recipe")
+	bobmods.lib.add_technology_recipe ("bf-advanced-biotechnology", "Bio_Fuel")
+	bobmods.lib.add_technology_recipe ("bf-advanced-biotechnology", "Fuel_Conversion")
+	table.insert(data.raw.recipe["Bio_Fuel"].ingredients,{type="fluid", name="NE_revitalization-solution", amount=20})
 	
 end
 
 
-	--- Adds Solar Farm to solar-energy Tecj
-	add_technology_recipe ("solar-energy", "bf_Bio_Solar_Farm")
-	
 
 	

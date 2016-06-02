@@ -145,7 +145,7 @@ data:extend(
 		energy_required = 18,
 		ingredients = {{"bf-charcoal",12}},
 		result = "coal",
-		result_count = 2,
+		result_count = 8,
 		enabled = "false"
 	},
 	-- COAL 2 --
@@ -157,7 +157,7 @@ data:extend(
 		energy_required = 18,
 		ingredients = {{"bf-charcoal",12}},
 		result = "coal",
-		result_count = 4,
+		result_count = 10,
 		enabled = "false"
 	},
 	-- COKE-COAL --
