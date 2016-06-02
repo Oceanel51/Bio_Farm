@@ -51,14 +51,14 @@ data:extend({
     name = "bf-Logs_Mk2",
     category = "biofarm-mod-dummy",
     enabled = "false",
-    energy_required = 300,
+    energy_required = 350,
 	ingredients =
     {
       {type="item", name="bf-seedling", amount=30},     
 	  {type="item", name="bf-fertilizer", amount=10},     
       {type="fluid", name="water", amount=100},
     },
-    result_count = 60,
+    result_count = 75,
     result = "raw-wood"
 	},
 	
@@ -76,7 +76,7 @@ data:extend({
       {type="fluid", name="water", amount=100},
 	  --{type="item", name="bf-adv-fertilizer", amount=5},     -- Will be added if you have Natural Evolution Buildings Mod installed.
     },
-    result_count = 100,
+    result_count = 150,
     result = "raw-wood"
 	},
 	

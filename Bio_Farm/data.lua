@@ -4,7 +4,7 @@ require("prototypes.Bio_Farm.item")
 require("prototypes.Bio_Farm.recipe")
 require("prototypes.Bio_Farm.liquids")
 require("prototypes.Bio_Farm.recipe-categories")
-
+require("prototypes.Bio_Farm.pipeConnectors")
 
 --- Bio Solar Farm
 require("prototypes.Bio_Solar_Farm.entities")

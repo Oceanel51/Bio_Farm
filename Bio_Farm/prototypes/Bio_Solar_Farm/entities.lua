@@ -24,7 +24,7 @@ data:extend({
 	light = {intensity = 0, size = 0},
     picture_off =
     {
-      filename = "__Bio_Farm__/graphics/entities/bio_solar_farm/Bio_Solar_Farm_Off.png",
+      filename = "__Bio_Farm__/graphics/entities/bio_solar_farm/Bio_Solar_Farm_On.png",
       priority = "high",
       width = 208,
       height = 192,
@@ -35,7 +35,7 @@ data:extend({
     },
     picture_on =
     {
-      filename = "__Bio_Farm__/graphics/entities/bio_solar_farm/Bio_Solar_Farm_On.png",
+      filename = "__Bio_Farm__/graphics/entities/bio_solar_farm/Bio_Solar_Farm_Off.png",
       priority = "high",
       width = 208,
       height = 192,
