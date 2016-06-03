@@ -210,25 +210,25 @@ data:extend(
 		name = "bf-liquid-air",
 		category = "chemistry",
 		subgroup = "intermediate-product",
-		energy_required = 10,
+		energy_required = 1,
 		ingredients = {},
 		results=
 		{
-			{type = "fluid", name = "bf-liquid-air", amount = 1}
+			{type = "fluid", name = "liquid-air", amount = 10}
 		},
 		enabled = "false"
 	},
-	-- LIQUID-NITROGEN --
+	-- -NITROGEN --
 	{
 		type = "recipe",
-		name = "bf-liquid-nitrogen",
+		name = "bf-nitrogen",
 		category = "chemistry",
 		subgroup = "intermediate-product",
 		energy_required = 10,
-		ingredients ={{type="fluid", name="bf-liquid-air", amount=2}},
+		ingredients ={{type="fluid", name="liquid-air", amount=2}},
 		results=
 		{
-			{type="fluid", name="bf-liquid-nitrogen", amount=1}
+			{type="fluid", name="nitrogen", amount=2}
 		},
 		enabled = "false"
 	},
@@ -239,7 +239,7 @@ data:extend(
 		category = "chemistry",
 		subgroup = "intermediate-product",
 		energy_required = 10,
-		ingredients ={{type="fluid", name="bf-liquid-air", amount=1}},
+		ingredients ={{type="fluid", name="liquid-air", amount=1}},
 		results=
 		{
 			{type="fluid", name="bf-liquid-co2", amount=1}
@@ -296,7 +296,7 @@ data:extend(
 		{
 			{type="item", name="bf-phosphate", amount=1},
 			{type="item", name="bf-potassium", amount=2},
-			{type="fluid", name="bf-liquid-nitrogen", amount=1},
+			{type="fluid", name="nitrogen", amount=1},
 			{type="item", name="bf-ash", amount=6}
 		},
 		results=
@@ -321,32 +321,11 @@ data:extend(
 		},
 		results=
 		{
-			{type="fluid", name="bf-biomass", amount=0.5},
-			{type="fluid", name="bf-biomass", amount=0.5}
+			{type="fluid", name="bf-biomass", amount=2},
 		},
 		enabled = "false"
 	},
 	
-	{
-		type = "recipe",
-		name = "bf-biomass-1",
-		icon = "__Bio_Farm__/graphics/icons/biomass.png",
-		subgroup = "intermediate-product",
-		category = "biofarm-mod-bioreactor",
-		energy_required = 10,
-		ingredients =
-		{
-			{type="fluid", name="water", amount=10},
-			{type="fluid", name="bf-biomass", amount=0.99},
-			{type="item", name="bf-fertilizer", amount=1}
-		},
-		results=
-		{
-			{type="fluid", name="bf-biomass", amount=1},
-			{type="fluid", name="bf-biomass", amount=1}
-		},
-		enabled = "false"
-	},
 	-- CELLULOSE --
 	{
 		type = "recipe",

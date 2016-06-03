@@ -32,7 +32,7 @@ data:extend({
   {
     type = "item",
     name = "bf_medium-electric-pole_for_Bio_Farm",
-    icon = "__Bio_Farm__/graphics/icons/empty.png",
+    icon = "__Bio_Farm__/graphics/icons/Bio_Farm_Cabeling.png",
     flags = {"hidden"},
     subgroup = "energy-pipe-distribution",
     place_result = "bf_medium-electric-pole_for_Bio_Farm",

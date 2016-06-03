@@ -21,7 +21,13 @@ end
 ]] 
 
 --- Adds Solar Farm to solar-energy Tech
-bobmods.lib.add_technology_recipe ("solar-energy", "bf_Bio_Solar_Farm")
+if data.raw.technology["bob-solar-energy-2"] then
+	bobmods.lib.add_technology_recipe ("bob-solar-energy-2", "bf_Bio_Solar_Farm")
+	bobmods.lib.replace_recipe_item("bf_Bio_Solar_Farm", "solar-panel", "solar-panel-large")
+else
+	bobmods.lib.add_technology_recipe ("solar-energy", "bf_Bio_Solar_Farm")
+end	
+
 	
 	
 ------- Adds a Mk3 recipe for wood if you're playing with Natural Evolution Buildings
@@ -45,6 +51,12 @@ if BI_Config.mod.NEBuildings then
 	table.insert(data.raw.recipe["Bio_Fuel"].ingredients,{type="fluid", name="NE_revitalization-solution", amount=20})
 	
 end
+
+
+
+
+
+
 
 
 

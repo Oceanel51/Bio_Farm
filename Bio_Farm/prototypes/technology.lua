@@ -166,7 +166,7 @@ data:extend(
 			},
 			{
 				type = "unlock-recipe",
-				recipe = "bf-liquid-nitrogen"
+				recipe = "bf-nitrogen"
 			},
 			{
 				type = "unlock-recipe",
@@ -213,10 +213,6 @@ data:extend(
 			{
 				type = "unlock-recipe",
 				recipe = "bf-biomass-0"
-			},
-			{
-				type = "unlock-recipe",
-				recipe = "bf-biomass-1"
 			},
 			{
 				type = "unlock-recipe",
