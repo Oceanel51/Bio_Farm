@@ -6,7 +6,8 @@ data:extend({
   {
     type = "recipe",
     name = "Bio_Fuel",
-    category = "chemistry",
+    --category = "chemistry",
+	category = "biofarm-mod-bioreactor",
     energy_required = 10,
     enabled = false,
     ingredients =
@@ -20,7 +21,7 @@ data:extend({
     },
     --subgroup = "Evolution-fluids"
 	subgroup = "fluid-recipes",
-	order = "a[oil-processing]-z[Fuel_Conversion]"
+	order = "a[oil-processing]-z[Bio_Fuel]"
   },
   
   {
@@ -31,16 +32,18 @@ data:extend({
     energy_required = 5,
     ingredients =
     {
-      {type="fluid", name="Bio_Fuel", amount=10}
+		{type="fluid", name="Bio_Fuel", amount=8},
+		{type="fluid", name="crude-oil", amount=2},
     },
     results=
     {
-      {type="fluid", name="heavy-oil", amount=2},
-      {type="fluid", name="light-oil", amount=3},    
+		{type="fluid", name="light-oil", amount=3},  
+		{type="fluid", name="heavy-oil", amount=2},
+    
     },
     icon = "__Bio_Farm__/graphics/icons/bio_conversion.png",
     subgroup = "fluid-recipes",
-    order = "a[oil-processing]-y[Bio_Fuel]"
+    order = "a[oil-processing]-y[Fuel_Conversion]"
   },
 
   

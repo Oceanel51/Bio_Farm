@@ -3,14 +3,13 @@ require ("util")
 
 
 data:extend({
-	------- Bio Solar Farm
-
-  ------- Bio Solar Farm Image
+------- Bio Solar Farm
+------- Bio Solar Farm Image
 
   {
     type = "lamp",
     name = "bf_Bio_Solar_Farm_Image",
-    icon = "__Bio_Farm__/graphics/icons/solar-panel.png",
+    icon = "__Bio_Farm__/graphics/icons/Bio_Solar_Farm_Icon.png",
 	flags = {"placeable-neutral", "player-creation", "placeable-off-grid", "not-repairable"},
 	selectable_in_game = false,
     max_health = 1,
@@ -49,7 +48,7 @@ data:extend({
   {
     type = "solar-panel",
     name = "bf_Bio_Solar_Farm",
-    icon = "__Bio_Farm__/graphics/icons/solar-panel.png",
+    icon = "__Bio_Farm__/graphics/icons/Bio_Solar_Farm_Icon.png",
 	flags = {"placeable-neutral", "player-creation", "not-repairable"},
 	minable = {hardness = 0.2, mining_time = 0.5, result = "bf_Bio_Solar_Farm"},
     max_health = 100,

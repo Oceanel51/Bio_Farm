@@ -5,7 +5,7 @@ data:extend({
   {
     type = "item",
     name = "bf_Bio_Solar_Farm",
-    icon = "__Bio_Farm__/graphics/icons/solar-panel.png", 
+    icon = "__Bio_Farm__/graphics/icons/Bio_Solar_Farm_Icon.png",
 	flags= { "goes-to-quickbar" },
     subgroup = "energy",
     place_result = "bf_Bio_Solar_Farm",
@@ -16,7 +16,7 @@ data:extend({
   {
   type= "item",
     name= "bf_Bio_Solar_Farm_Image",
-    icon = "__Bio_Farm__/graphics/icons/solar-panel.png",
+    icon = "__Bio_Farm__/graphics/icons/Bio_Solar_Farm_Icon.png",
     flags = {"hidden"},
     subgroup = "energy",
     place_result = "bf_Bio_Solar_Farm_Image",
