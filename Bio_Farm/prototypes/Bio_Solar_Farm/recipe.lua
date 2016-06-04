@@ -9,9 +9,8 @@ data:extend({
 		ingredients = 
 		{
 			{"solar-panel",20},
-			{"medium-electric-pole",5},
-			{"concrete",20},
-					
+			{"medium-electric-pole",10},
+			{"concrete",40},				
 		},
 		result = "bf_Bio_Solar_Farm"
 	},

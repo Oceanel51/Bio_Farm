@@ -364,7 +364,7 @@ data:extend(
 	{
 		type = "recipe",
 		name = "bf-cokery",
-		ingredients = {{"stone-furnace",1},{"steel-plate",10}},
+		ingredients = {{"stone-furnace",3},{"steel-plate",10}},
 		result = "bf-cokery",
 		result_count = 1,
 		enabled = "false"
